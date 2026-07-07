@@ -1,9 +1,22 @@
+// === INITIAL SCROLL POSITION ===
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
+window.addEventListener('pageshow', () => {
+    if (!window.location.hash) {
+        window.scrollTo(0, 0);
+    }
+});
+
 // === SCROLL PROGRESS ===
 const scrollProgress = document.getElementById('scrollProgress');
 window.addEventListener('scroll', () => {
     const t = document.documentElement.scrollTop;
     const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    scrollProgress.style.width = (t / h) * 100 + '%';
+    if (scrollProgress) {
+        scrollProgress.style.width = (t / h) * 100 + '%';
+    }
 });
 
 // === NAVBAR ===
