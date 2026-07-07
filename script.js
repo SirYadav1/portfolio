@@ -1,5 +1,11 @@
-// === SCROLL PROGRESS ===
-const scrollProgress = document.getElementById('scrollProgress');
+// === FORCE TOP ON LOAD ===
+if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+window.scrollTo(0, 0);
+
+// === SCROLL PROGRESS BAR ===
+const scrollProgress = document.createElement('div');
+scrollProgress.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--cyan));z-index:200;transition:width .1s;width:0';
+document.body.prepend(scrollProgress);
 window.addEventListener('scroll', () => {
     const t = document.documentElement.scrollTop;
     const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -123,6 +129,7 @@ He builds tools that automate, secure, and optimize.
 
   <span class="t-cyan">GitHub:</span>   github.com/SirYadav1
   <span class="t-cyan">Telegram:</span> t.me/SirYadav1
+  <span class="t-cyan">LeetCode:</span> leetcode.com/u/siryadav1
   <span class="t-cyan">Email:</span>    contact@sundram.dev`,
 
     whoami: () => `<span class="t-green">visitor@portfolio</span> <span class="t-dim">(a curious developer exploring the matrix)</span>`,
