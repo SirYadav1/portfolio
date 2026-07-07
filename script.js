@@ -1,6 +1,7 @@
 // === FORCE TOP ON LOAD ===
 if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
 window.scrollTo(0, 0);
+document.addEventListener('DOMContentLoaded', () => window.scrollTo(0, 0));
 
 // === SCROLL PROGRESS BAR ===
 const scrollProgress = document.createElement('div');
