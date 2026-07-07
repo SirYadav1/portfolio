@@ -203,7 +203,7 @@ body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
 
 /* CONTACT */
 .contact{padding:140px 0;position:relative;z-index:2}
-.contact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
 .contact-card{display:flex;align-items:center;gap:16px;padding:24px 28px;
   background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);
   color:var(--text);text-decoration:none;transition:all .3s;position:relative;overflow:hidden}

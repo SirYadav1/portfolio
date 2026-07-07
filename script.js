@@ -130,6 +130,7 @@ He builds tools that automate, secure, and optimize.
 
   <span class="t-cyan">GitHub:</span>   github.com/SirYadav1
   <span class="t-cyan">Telegram:</span> t.me/SirYadav1
+  <span class="t-cyan">Discord:</span>  Siryadav (UID: 1258701590622109738)
   <span class="t-cyan">LeetCode:</span> leetcode.com/u/siryadav1
   <span class="t-cyan">Email:</span>    contact@sundram.dev`,
 
