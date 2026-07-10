@@ -59,21 +59,40 @@ const termInput = document.getElementById('termInput');
 const hist = [];
 let hi = -1;
 
-function escapeHtml(text) {
-  return text.replace(/[&<>"']/g, ch => ({
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#39;'
-  }[ch]));
-}
-
-function addLine(text, isCmd = false) {
+function addHtmlLine(text) {
   const d = document.createElement('div');
   d.className = 'tl';
-  if (isCmd) d.innerHTML = '<span class="c-dim">visitor@portfolio:~$ </span><span class="c-white">' + escapeHtml(text) + '</span>';
-  else if (text !== null) d.innerHTML = text;
+  if (text !== null) d.innerHTML = text;
+  termBody.appendChild(d);
+  termBody.scrollTop = termBody.scrollHeight;
+}
+
+function addCommandLine(text) {
+  const d = document.createElement('div');
+  d.className = 'tl';
+
+  const prompt = document.createElement('span');
+  prompt.className = 'c-dim';
+  prompt.textContent = 'visitor@portfolio:~$ ';
+
+  const value = document.createElement('span');
+  value.className = 'c-white';
+  value.textContent = text;
+
+  d.append(prompt, value);
+  termBody.appendChild(d);
+  termBody.scrollTop = termBody.scrollHeight;
+}
+
+function addTextLine(text, className = 'c-white') {
+  const d = document.createElement('div');
+  d.className = 'tl';
+
+  const span = document.createElement('span');
+  span.className = className;
+  span.textContent = text;
+  d.appendChild(span);
+
   termBody.appendChild(d);
   termBody.scrollTop = termBody.scrollHeight;
 }
@@ -170,11 +189,14 @@ termInput.addEventListener('keydown', e => {
     if (v) {
       hist.unshift(v);
       hi = -1;
-      addLine(v, true);
+      addCommandLine(v);
       const c = v.toLowerCase();
-      if (cmds[c]) { const r = cmds[c](); if (r !== null) addLine(r); }
-      else if (eggs[c]) addLine(eggs[c]);
-      else addLine(`<span class="c-red">command not found: ${escapeHtml(v)}</span>\n<span class="c-dim">type 'help'</span>`);
+      if (cmds[c]) { const r = cmds[c](); if (r !== null) addHtmlLine(r); }
+      else if (eggs[c]) addHtmlLine(eggs[c]);
+      else {
+        addTextLine(`command not found: ${v}`, 'c-red');
+        addHtmlLine(`<span class="c-dim">type 'help'</span>`);
+      }
     }
     termInput.value = '';
   } else if (e.key === 'ArrowUp') {
