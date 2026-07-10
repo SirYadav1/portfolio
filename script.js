@@ -59,10 +59,20 @@ const termInput = document.getElementById('termInput');
 const hist = [];
 let hi = -1;
 
+function escapeHtml(text) {
+  return text.replace(/[&<>"']/g, ch => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  }[ch]));
+}
+
 function addLine(text, isCmd = false) {
   const d = document.createElement('div');
   d.className = 'tl';
-  if (isCmd) d.innerHTML = '<span class="c-dim">visitor@portfolio:~$ </span><span class="c-white">' + text + '</span>';
+  if (isCmd) d.innerHTML = '<span class="c-dim">visitor@portfolio:~$ </span><span class="c-white">' + escapeHtml(text) + '</span>';
   else if (text !== null) d.innerHTML = text;
   termBody.appendChild(d);
   termBody.scrollTop = termBody.scrollHeight;
@@ -164,7 +174,7 @@ termInput.addEventListener('keydown', e => {
       const c = v.toLowerCase();
       if (cmds[c]) { const r = cmds[c](); if (r !== null) addLine(r); }
       else if (eggs[c]) addLine(eggs[c]);
-      else addLine(`<span class="c-red">command not found: ${v}</span>\n<span class="c-dim">type 'help'</span>`);
+      else addLine(`<span class="c-red">command not found: ${escapeHtml(v)}</span>\n<span class="c-dim">type 'help'</span>`);
     }
     termInput.value = '';
   } else if (e.key === 'ArrowUp') {
