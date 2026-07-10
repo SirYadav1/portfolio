@@ -1,228 +1,169 @@
-// === FORCE TOP ON LOAD ===
-if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-window.scrollTo(0, 0);
-document.addEventListener('DOMContentLoaded', () => window.scrollTo(0, 0));
-
-// === SCROLL PROGRESS BAR ===
-const scrollProgress = document.createElement('div');
-scrollProgress.style.cssText = 'position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--cyan));z-index:200;transition:width .1s;width:0';
-document.body.prepend(scrollProgress);
+// === NAV SCROLL ===
+const nav = document.querySelector('.nav');
 window.addEventListener('scroll', () => {
-    const t = document.documentElement.scrollTop;
-    const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    scrollProgress.style.width = (t / h) * 100 + '%';
+  nav.style.background = window.scrollY > 40
+    ? 'rgba(10, 10, 11, 0.85)'
+    : 'rgba(10, 10, 11, 0.7)';
 });
 
-// === NAVBAR ===
-const navbar = document.querySelector('.navbar');
+// === SCROLL PROGRESS ===
+const bar = document.createElement('div');
+bar.style.cssText = 'position:fixed;top:0;left:0;height:1.5px;background:#22c55e;z-index:200;transition:width .15s;width:0';
+document.body.prepend(bar);
 window.addEventListener('scroll', () => {
-    navbar.style.background = window.scrollY > 50 ? 'rgba(9,9,11,.85)' : 'rgba(9,9,11,.6)';
+  const t = document.documentElement.scrollTop;
+  const h = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  bar.style.width = (t / h) * 100 + '%';
 });
 
 // === SMOOTH SCROLL ===
 document.querySelectorAll('a[href^="#"]').forEach(a => {
-    a.addEventListener('click', e => {
-        e.preventDefault();
-        const t = document.querySelector(a.getAttribute('href'));
-        if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    });
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const t = document.querySelector(a.getAttribute('href'));
+    if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 });
 
-// === SCROLL ANIMATIONS ===
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+// === REVEAL ON SCROLL ===
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
 
-document.querySelectorAll('.project-card, .about-card, .skill-card, .contact-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity .6s ease, transform .6s ease';
-    observer.observe(el);
+document.querySelectorAll('.work-card, .sc, .cc').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(16px)';
+  el.style.transition = 'opacity .5s ease, transform .5s ease';
+  obs.observe(el);
 });
-
-// === TYPING EFFECT ===
-const subtitle = document.querySelector('.hero-subtitle');
-const texts = ['Developer & Security Researcher', 'Python \u2022 Go \u2022 JavaScript', 'Building Tools That Matter'];
-let ti = 0, ci = 0, del = false;
-function type() {
-    const cur = texts[ti];
-    subtitle.textContent = del ? cur.substring(0, ci - 1) : cur.substring(0, ci + 1);
-    ci += del ? -1 : 1;
-    let spd = del ? 40 : 80;
-    if (!del && ci === cur.length) { spd = 2000; del = true; }
-    else if (del && ci === 0) { del = false; ti = (ti + 1) % texts.length; spd = 400; }
-    setTimeout(type, spd);
-}
-setTimeout(type, 800);
-
-// === STAT COUNTERS ===
-const statsObs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.querySelectorAll('.stat-num').forEach(s => {
-                const target = parseInt(s.dataset.target);
-                let cur = 0;
-                const inc = target / 50;
-                const timer = setInterval(() => {
-                    cur += inc;
-                    if (cur >= target) { s.textContent = target + '+'; clearInterval(timer); }
-                    else s.textContent = Math.floor(cur) + '+';
-                }, 30);
-            });
-            statsObs.unobserve(entry.target);
-        }
-    });
-}, { threshold: 0.5 });
-const heroStats = document.querySelector('.hero-stats');
-if (heroStats) statsObs.observe(heroStats);
 
 // === TERMINAL ===
-const termBody = document.getElementById('terminalBody');
-const termInput = document.getElementById('terminalInput');
+const termBody = document.getElementById('termBody');
+const termInput = document.getElementById('termInput');
 const hist = [];
 let hi = -1;
 
+function addLine(text, isCmd = false) {
+  const d = document.createElement('div');
+  d.className = 'tl';
+  if (isCmd) d.innerHTML = '<span class="c-dim">visitor@portfolio:~$ </span><span class="c-white">' + text + '</span>';
+  else if (text !== null) d.innerHTML = text;
+  termBody.appendChild(d);
+  termBody.scrollTop = termBody.scrollHeight;
+}
+
 const cmds = {
-    help: () => `<span class="t-green">Available commands:</span>
+  help: () => `<span class="c-green">Available commands:</span>
 
-  <span class="t-cyan">about</span>      - Learn about Sundram
-  <span class="t-cyan">projects</span>   - List all projects
-  <span class="t-cyan">skills</span>     - Show technical skills
-  <span class="t-cyan">contact</span>    - Get contact info
-  <span class="t-cyan">whoami</span>     - Who are you?
-  <span class="t-cyan">date</span>       - Current date & time
-  <span class="t-cyan">github</span>     - Open GitHub profile
-  <span class="t-cyan">telegram</span>   - Open Telegram
-  <span class="t-cyan">neofetch</span>   - System info
-  <span class="t-cyan">hack</span>       - Try to hack the terminal
-  <span class="t-cyan">clear</span>      - Clear terminal
-  <span class="t-dim">Type anything else for a surprise!</span>`,
+  <span class="c-cyan">about</span>      - who is sundram?
+  <span class="c-cyan">projects</span>   - list my projects
+  <span class="c-cyan">skills</span>     - tech stack
+  <span class="c-cyan">contact</span>    - reach me
+  <span class="c-cyan">whoami</span>     - about you
+  <span class="c-cyan">date</span>       - current time
+  <span class="c-cyan">clear</span>      - clear terminal
+  <span class="c-cyan">neofetch</span>   - system info
+  <span class="c-cyan">hack</span>       - try it
+  <span class="c-dim">or just type anything</span>`,
 
-    about: () => `<span class="t-white">Sundram Yadav</span> is a developer and security researcher.
-He builds tools that automate, secure, and optimize.
+  about: () => `<span class="c-white">Sundram Yadav</span> — backend developer and security researcher.
+PHP, Node.js, Python. I build tools that automate, scan, and protect.
 
-<span class="t-dim">From network scanners to Telegram bots,</span>
-<span class="t-dim">he turns ideas into functional software.</span>`,
+Currently exploring network security and writing open-source tools.
+Linux user who believes in clean, functional code.`,
 
-    projects: () => `<span class="t-green">Featured Projects:</span>
+  projects: () => `<span class="c-green">Projects:</span>
 
-  <span class="t-cyan">1.</span> AdwanceSNI 2.0    <span class="t-yellow">Python</span>    <span class="t-dim">Network Scanner</span>
-  <span class="t-cyan">2.</span> Zyphron Free Dash  <span class="t-yellow">Vue+JS</span>    <span class="t-dim">E-commerce Dashboard</span>
-  <span class="t-cyan">3.</span> Minecraft AFK Bot  <span class="t-yellow">Node.js</span>  <span class="t-dim">Game Automation</span>
-  <span class="t-cyan">4.</span> TG Chat Fetch      <span class="t-yellow">Python</span>    <span class="t-dim">Telegram Archiver</span>
-  <span class="t-cyan">5.</span> AdwanceSNI         <span class="t-yellow">Python</span>    <span class="t-dim">SNI Finder</span>
-  <span class="t-cyan">6.</span> FlashScan Go       <span class="t-yellow">Go</span>        <span class="t-dim">Security Scanner</span>
-  <span class="t-cyan">7.</span> Insta Downloader   <span class="t-yellow">Python</span>    <span class="t-dim">Telegram Bot</span>`,
+  <span class="c-cyan">AdwanceSNI 2.0</span>    — <span class="c-yellow">Python</span>  network scanner (★ 22)
+  <span class="c-cyan">Zyphron Dash</span>       — <span class="c-yellow">Vue+NestJS</span>  e-commerce dashboard
+  <span class="c-cyan">Minecraft AFK Bot</span>  — <span class="c-yellow">Node.js</span>  game automation
+  <span class="c-cyan">TG Chat Fetch</span>      — <span class="c-yellow">Python</span>  telegram archiver
+  <span class="c-cyan">AdwanceSNI</span>         — <span class="c-yellow">Python</span>  SNI finder (★ 10)
+  <span class="c-cyan">FlashScan Go</span>       — <span class="c-yellow">Go</span>  security scanner
+  <span class="c-cyan">Insta Downloader</span>   — <span class="c-yellow">Python</span>  telegram bot (★ 3)
+  <span class="c-dim">github.com/SirYadav1</span>`,
 
-    skills: () => `<span class="t-green">Technical Skills:</span>
+  skills: () => `<span class="c-green">Tech Stack:</span>
 
-  <span class="t-purple">Languages:</span>  Python, JavaScript, TypeScript, Go, Shell
-  <span class="t-purple">Frameworks:</span> Vue.js, NestJS, Node.js, Telethon, Vite
-  <span class="t-purple">Tools:</span>      Git, Docker, Linux, Nginx, PostgreSQL
-  <span class="t-purple">Security:</span>   Network Scanning, Bug Bounty, SNI Detection`,
+  <span class="c-purple">Languages:</span>   PHP, Node.js, Python, TypeScript, Go, Bash
+  <span class="c-purple">Frameworks:</span>   Express, Vue.js, NestJS, React, Flutter
+  <span class="c-purple">Infra:</span>        Linux, Docker, Nginx, MySQL, Cloudflare
+  <span class="c-purple">Security:</span>     Network Scanning, Bug Bounty, SNI Detection`,
 
-    contact: () => `<span class="t-green">Contact Info:</span>
+  contact: () => `<span class="c-green">Reach me:</span>
 
-  <span class="t-cyan">GitHub:</span>   github.com/SirYadav1
-  <span class="t-cyan">Telegram:</span> t.me/SirYadav1
-  <span class="t-cyan">Discord:</span>  Siryadav (UID: 1258701590622109738)
-  <span class="t-cyan">LeetCode:</span> leetcode.com/u/siryadav1
-  <span class="t-cyan">Email:</span>    contact@sundram.dev`,
+  <span class="c-cyan">GitHub:</span>   github.com/SirYadav1
+  <span class="c-cyan">Telegram:</span> t.me/SirYadav
+  <span class="c-cyan">X:</span>         x.com/siryadav0
+  <span class="c-cyan">LeetCode:</span>  leetcode.com/u/siryadav1
+  <span class="c-cyan">Email:</span>     osamabinladenfromindia@gmail.com`,
 
-    whoami: () => `<span class="t-green">visitor@portfolio</span> <span class="t-dim">(a curious developer exploring the matrix)</span>`,
-    date: () => `<span class="t-cyan">${new Date().toString()}</span>`,
-    github: () => { window.open('https://github.com/SirYadav1', '_blank'); return '<span class="t-green">Opening GitHub profile...</span>'; },
-    telegram: () => { window.open('https://t.me/SirYadav1', '_blank'); return '<span class="t-green">Opening Telegram...</span>'; },
+  whoami: () => `<span class="c-green">visitor@portfolio</span> <span class="c-dim">(some dev looking around)</span>`,
 
-    neofetch: () => `<span class="t-cyan">       _____</span>           <span class="t-green">visitor</span>@<span class="t-green">portfolio</span>
-<span class="t-cyan">      /     \\</span>          ----------------
-<span class="t-cyan">     | () () |</span>         <span class="t-purple">OS:</span> Portfolio OS v2.0
-<span class="t-cyan">     |  ___  |</span>         <span class="t-purple">Host:</span> Sundram Yadav
-<span class="t-cyan">     | |   | |</span>         <span class="t-purple">Kernel:</span> JavaScript ES2024
-<span class="t-cyan">     |_|   |_|</span>         <span class="t-purple">Shell:</span> Portfolio Terminal
-<span class="t-cyan">   __|       |__</span>        <span class="t-purple">DE:</span> Custom HTML/CSS
-<span class="t-cyan">  /  \\       /  \\</span>       <span class="t-purple">Theme:</span> Dark [Purple]
-<span class="t-cyan"> / /\\ \\_____/ /\\ \\</span>      <span class="t-purple">CPU:</span> Imagination @ 100%
-<span class="t-cyan"> \\_\\/         \\/_/</span>      <span class="t-purple">Memory:</span> Unlimited Curiosity
+  date: () => `<span class="c-cyan">${new Date().toString()}</span>`,
 
-<span class="t-dim">       Built with passion</span>`,
+  clear: () => { termBody.innerHTML = ''; return null; },
 
-    hack: () => [
-        '<span class="t-red">WARNING: Unauthorized access attempt detected!</span>',
-        '<span class="t-yellow">Bypassing firewall...</span>',
-        '<span class="t-yellow">Decrypting password hashes...</span>',
-        '<span class="t-yellow">Accessing mainframe...</span>',
-        '<span class="t-green">ACCESS GRANTED!</span>',
-        '<span class="t-cyan">Just kidding! This is a portfolio terminal :)</span>',
-        '<span class="t-dim">Sundram\'s security skills are real though.</span>'
-    ].join('\n'),
+  neofetch: () => `<span class="c-cyan">       _____</span>           <span class="c-green">visitor</span>@<span class="c-green">portfolio</span>
+<span class="c-cyan">      /     \\</span>          --------------------
+<span class="c-cyan">     | () () |</span>         <span class="c-purple">OS:</span> Portfolio v2 (custom)
+<span class="c-cyan">     |  ___  |</span>         <span class="c-purple">Host:</span> Sundram Yadav
+<span class="c-cyan">     | |   | |</span>         <span class="c-purple">Kernel:</span> Vanilla JS
+<span class="c-cyan">     |_|   |_|</span>         <span class="c-purple">Uptime:</span> 100% caffeine
+<span class="c-cyan">   __|       |__</span>        <span class="c-purple">Shell:</span> portfolio terminal
+<span class="c-cyan">  /  \\       /  \\</span>       <span class="c-purple">Theme:</span> dark/green
+<span class="c-cyan"> / /\\ \\_____/ /\\ \\</span>      <span class="c-purple">Motto:</span> build. break. secure.
+<span class="c-cyan"> \\_\\/         \\/_/</span>
 
-    clear: () => { termBody.innerHTML = ''; return null; }
+<span class="c-dim">  built from scratch, no templates</span>`,
+
+  hack: () => [
+    '<span class="c-red">⚠️ intrusion attempt detected</span>',
+    '<span class="c-yellow">firewall bypass in progress...</span>',
+    '<span class="c-yellow">decrypting handshake...</span>',
+    '<span class="c-green">ACCESS GRANTED</span>',
+    '<span class="c-cyan">just kidding. security researcher, remember? :)</span>'
+  ].join('\n')
 };
 
 const eggs = {
-    hello: '<span class="t-cyan">Hello there! Nice to meet you :)</span>',
-    hi: '<span class="t-cyan">Hey! What brings you here?</span>',
-    'how are you': '<span class="t-green">I\'m doing great, thanks for asking!</span>',
-    sus: '<span class="t-yellow">SUS?ඞ</span>',
-    amongus: '<span class="t-red">EMERGENCY MEETING!</span>',
-    '42': '<span class="t-green">The answer to life, the universe, and everything.</span>',
-    password: '<span class="t-red">Nice try! But I\'m a security researcher remember? ;)</span>',
-    sudo: '<span class="t-yellow">Nice try, but you\'re not root here!</span>',
-    'rm -rf': '<span class="t-red">DECLINED. This is why we can\'t have nice things.</span>',
-    matrix: '<span class="t-green">Follow the white rabbit...</span>',
-    bye: '<span class="t-dim">Goodbye! Come back soon!</span>',
-    thanks: '<span class="t-green">You\'re welcome! Happy to help.</span>'
+  hello: '<span class="c-cyan">hey! welcome :)</span>',
+  hi: '<span class="c-cyan">yo. what brings you here?</span>',
+  'how are you': '<span class="c-green">doing great, you?</span>',
+  sus: '<span class="c-yellow">ඞ sus</span>',
+  password: '<span class="c-red">nice try ;)</span>',
+  sudo: '<span class="c-yellow">you are not in the sudoers file.</span>',
+  bye: '<span class="c-dim">cya. come back anytime.</span>',
+  thanks: '<span class="c-green">no problem.</span>',
+  '42': '<span class="c-green">the answer to life, the universe, and everything.</span>'
 };
 
-function addOut(text, isCmd = false) {
-    const d = document.createElement('div');
-    d.className = 'term-line';
-    if (isCmd) d.innerHTML = '<span class="t-dim">visitor@portfolio:~$ </span><span class="t-white">' + text + '</span>';
-    else if (text !== null) d.innerHTML = text;
-    termBody.appendChild(d);
-    termBody.scrollTop = termBody.scrollHeight;
-}
-
 termInput.addEventListener('keydown', e => {
-    if (e.key === 'Enter') {
-        const v = termInput.value.trim();
-        if (v) {
-            hist.unshift(v); hi = -1;
-            addOut(v, true);
-            const c = v.toLowerCase();
-            if (cmds[c]) { const r = cmds[c](); if (r !== null) addOut(r); }
-            else if (eggs[c]) addOut(eggs[c]);
-            else addOut(`<span class="t-red">Command not found: ${v}</span>\n<span class="t-dim">Type 'help' for available commands.</span>`);
-        }
-        termInput.value = '';
-    } else if (e.key === 'ArrowUp') {
-        e.preventDefault();
-        if (hi < hist.length - 1) { hi++; termInput.value = hist[hi]; }
-    } else if (e.key === 'ArrowDown') {
-        e.preventDefault();
-        if (hi > 0) { hi--; termInput.value = hist[hi]; }
-        else { hi = -1; termInput.value = ''; }
+  if (e.key === 'Enter') {
+    const v = termInput.value.trim();
+    if (v) {
+      hist.unshift(v);
+      hi = -1;
+      addLine(v, true);
+      const c = v.toLowerCase();
+      if (cmds[c]) { const r = cmds[c](); if (r !== null) addLine(r); }
+      else if (eggs[c]) addLine(eggs[c]);
+      else addLine(`<span class="c-red">command not found: ${v}</span>\n<span class="c-dim">type 'help'</span>`);
     }
+    termInput.value = '';
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (hi < hist.length - 1) { hi++; termInput.value = hist[hi]; }
+  } else if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (hi > 0) { hi--; termInput.value = hist[hi]; }
+    else { hi = -1; termInput.value = ''; }
+  }
 });
 
 document.querySelector('.terminal').addEventListener('click', () => termInput.focus());
-
-// === KONAMI CODE ===
-let kc = [];
-const ks = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-document.addEventListener('keydown', e => {
-    kc.push(e.key);
-    if (kc.length > 10) kc.shift();
-    if (JSON.stringify(kc) === JSON.stringify(ks)) {
-        document.body.style.transition = 'transform 1s';
-        document.body.style.transform = 'rotate(360deg)';
-        setTimeout(() => { document.body.style.transform = ''; }, 1000);
-        kc = [];
-    }
-});
