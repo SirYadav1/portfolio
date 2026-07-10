@@ -1,457 +1,324 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sundram Yadav — Developer & Security Researcher</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SirYadav1 — Sundram Yadav</title>
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/159863013?v=4">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="noise"></div>
-    <div class="gradient-orb orb-1"></div>
-    <div class="gradient-orb orb-2"></div>
-    <div class="gradient-orb orb-3"></div>
 
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="#" class="nav-logo">
-                <span class="logo-icon">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                </span>
-                <span>Sundram</span>
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <img src="https://avatars.githubusercontent.com/u/159863013?v=4" alt="avatar" class="nav-avatar">
+        ~/sundram
+      </a>
+      <div class="nav-links">
+        <a href="#work">/work</a>
+        <a href="#skills">/skills</a>
+        <a href="#terminal">/terminal</a>
+        <a href="#contact">/contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        open for work
+      </div>
+      <h1 class="hero-title">
+        Sundram Yadav<br>
+        <span class="h-acc">backend dev & security researcher</span>
+      </h1>
+      <p class="hero-desc">
+        I write PHP, Node.js, Python. Build tools that automate, scan, and protect.
+        Linux user. Open source enthusiast.
+      </p>
+      <div class="hero-actions">
+        <a href="#work" class="btn btn-primary">see my work</a>
+        <a href="https://github.com/SirYadav1" target="_blank" class="btn btn-ghost">github ↗</a>
+      </div>
+      <div class="hero-marquee">
+        <span>PHP</span><span>Node.js</span><span>Python</span><span>JavaScript</span><span>Bash</span><span>Linux</span><span>Docker</span><span>Nginx</span><span>SQL</span><span>Security</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work" class="work">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="t-green">$</span> ls <span class="t-dim">~/projects/</span>
+      </h2>
+      <div class="work-grid">
+
+        <article class="work-card featured">
+          <div class="wc-badge">featured</div>
+          <div class="wc-header">
+            <div class="wc-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <a href="https://github.com/SirYadav1/AdwanceSNI-2.0" target="_blank" class="wc-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             </a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#projects">Work</a>
-                <a href="#skills">Skills</a>
-                <a href="#terminal">Terminal</a>
-                <a href="#contact">Contact</a>
+          </div>
+          <h3 class="wc-title">AdwanceSNI 2.0</h3>
+          <p class="wc-desc">Network scanning suite — subdomain discovery, host scanning, IP extraction. Python-based, one tool to do it all.</p>
+          <div class="wc-tags">
+            <span>Python</span>
+            <span>Security</span>
+            <span class="tag-star">★ 22</span>
+          </div>
+        </article>
+
+        <article class="work-card featured">
+          <div class="wc-badge">featured</div>
+          <div class="wc-header">
+            <div class="wc-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
             </div>
-            <a href="https://github.com/SirYadav1" target="_blank" class="nav-github" aria-label="GitHub">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            <a href="https://github.com/SirYadav1/zyphron-free-dash" target="_blank" class="wc-link">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
             </a>
+          </div>
+          <h3 class="wc-title">Zyphron Free Dash</h3>
+          <p class="wc-desc">Full-stack e-commerce dashboard — user management, server allocation, API key handling, and ticket system.</p>
+          <div class="wc-tags">
+            <span>Vue.js</span>
+            <span>NestJS</span>
+            <span>TypeScript</span>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="wc-header">
+            <div class="wc-icon gc">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <a href="https://github.com/SirYadav1/minecraft-afk-bot" target="_blank" class="wc-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="wc-title">Minecraft AFK Bot</h3>
+          <p class="wc-desc">Automated bot with web dashboard, multi-account support, and real-time monitoring.</p>
+          <div class="wc-tags">
+            <span>Node.js</span>
+            <span>JavaScript</span>
+            <span class="tag-star">★ 1</span>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="wc-header">
+            <div class="wc-icon gc">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <a href="https://github.com/SirYadav1/tg-chat-fetch" target="_blank" class="wc-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="wc-title">TG Chat Fetch</h3>
+          <p class="wc-desc">Telegram chat archiver — multi-target backup, date filtering, auto-resume on interrupt.</p>
+          <div class="wc-tags">
+            <span>Python</span>
+            <span>Telethon</span>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="wc-header">
+            <div class="wc-icon gc">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <a href="https://github.com/SirYadav1/AdwanceSNI" target="_blank" class="wc-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="wc-title">AdwanceSNI</h3>
+          <p class="wc-desc">SNI finding tool for network reconnaissance and security testing — simple but effective.</p>
+          <div class="wc-tags">
+            <span>Python</span>
+            <span>Security</span>
+            <span class="tag-star">★ 10</span>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="wc-header">
+            <div class="wc-icon gc">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <a href="https://github.com/SirYadav1/flashscan-go" target="_blank" class="wc-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="wc-title">FlashScan Go</h3>
+          <p class="wc-desc">High-performance security scanner written in Go — fast network analysis.</p>
+          <div class="wc-tags">
+            <span>Go</span>
+            <span>Security</span>
+          </div>
+        </article>
+
+        <article class="work-card">
+          <div class="wc-header">
+            <div class="wc-icon gc">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </div>
+            <a href="https://github.com/SirYadav1/insta-downloader" target="_blank" class="wc-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3 class="wc-title">Insta Downloader</h3>
+          <p class="wc-desc">Telegram bot that downloads Instagram videos and converts them to direct download links.</p>
+          <div class="wc-tags">
+            <span>Python</span>
+            <span>Telegram Bot</span>
+            <span class="tag-star">★ 3</span>
+          </div>
+        </article>
+
+      </div>
+      <div class="work-footer">
+        <a href="https://github.com/SirYadav1?tab=repositories" target="_blank" class="btn btn-ghost">
+          view all repos ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="t-green">$</span> which <span class="t-dim">sundram</span>
+      </h2>
+      <div class="skills-grid">
+        <div class="sc">
+          <h3>Languages</h3>
+          <ul>
+            <li>PHP</li>
+            <li>Node.js / JavaScript</li>
+            <li>Python</li>
+            <li>TypeScript</li>
+            <li>Go</li>
+            <li>Bash</li>
+          </ul>
         </div>
-    </nav>
-
-    <!-- HERO -->
-    <section class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    Available for work
-                </div>
-                <h1 class="hero-title">
-                    Building the <br>
-                    <span class="gradient-text">future</span>, one <br>
-                    line at a time.
-                </h1>
-                <p class="hero-subtitle">Sundram Yadav</p>
-                <p class="hero-desc">Developer & Security Researcher crafting tools that automate, protect, and perform. From network scanners to full-stack apps.</p>
-                <div class="hero-actions">
-                    <a href="#projects" class="btn btn-glow">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-                        See My Work
-                    </a>
-                    <a href="#contact" class="btn btn-ghost">
-                        Let's Talk
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat-item">
-                        <span class="stat-num" data-target="24">0</span>
-                        <span class="stat-text">Projects</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-num" data-target="35">0</span>
-                        <span class="stat-text">Stars</span>
-                    </div>
-                    <div class="stat-divider"></div>
-                    <div class="stat-item">
-                        <span class="stat-num" data-target="5">0</span>
-                        <span class="stat-text">Languages</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="code-card">
-                    <div class="code-header">
-                        <div class="code-dots">
-                            <span></span><span></span><span></span>
-                        </div>
-                        <span class="code-filename">developer.py</span>
-                    </div>
-                    <pre class="code-body"><code><span class="c-keyword">class</span> <span class="c-class">Developer</span>:
-  <span class="c-keyword">def</span> <span class="c-func">__init__</span>(self):
-    self.name = <span class="c-str">"Sundram Yadav"</span>
-    self.role = <span class="c-str">"Dev & Security"</span>
-    self.stack = [
-      <span class="c-str">"Python"</span>, <span class="c-str">"Go"</span>,
-      <span class="c-str">"JavaScript"</span>, <span class="c-str">"Vue.js"</span>,
-      <span class="c-str">"TypeScript"</span>, <span class="c-str">"NestJS"</span>
-    ]
-    self.motto = <span class="c-str">"Build. Break. Secure."</span></code></pre>
-                </div>
-            </div>
+        <div class="sc">
+          <h3>Frameworks & Tools</h3>
+          <ul>
+            <li>Express.js</li>
+            <li>Vue.js</li>
+            <li>NestJS</li>
+            <li>React</li>
+            <li>Flutter</li>
+          </ul>
         </div>
-        <div class="scroll-indicator">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        <div class="sc">
+          <h3>Infrastructure</h3>
+          <ul>
+            <li>Linux (Ubuntu, Alpine)</li>
+            <li>Docker</li>
+            <li>Nginx</li>
+            <li>MySQL / SQLite</li>
+            <li>Cloudflare</li>
+          </ul>
         </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-label">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-                About
-            </div>
-            <h2 class="section-title">Who am I?</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p class="about-lead">I'm a developer and security researcher who believes in building tools that actually matter.</p>
-                    <p>My work spans from network security scanners to automation bots and full-stack web applications. I don't just write code — I craft solutions that solve real problems.</p>
-                    <p>When I'm not coding, I'm probably breaking things to understand how they work. Security isn't just a feature for me — it's a mindset.</p>
-                </div>
-                <div class="about-cards">
-                    <div class="about-card">
-                        <div class="about-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-                        </div>
-                        <h4>Security First</h4>
-                        <p>Every line of code is written with security in mind from day one.</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        </div>
-                        <h4>Clean Code</h4>
-                        <p>Readable, maintainable, and efficient — code that lasts.</p>
-                    </div>
-                    <div class="about-card">
-                        <div class="about-card-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        </div>
-                        <h4>Fast & Scalable</h4>
-                        <p>Performance-optimized solutions that scale with your needs.</p>
-                    </div>
-                </div>
-            </div>
+        <div class="sc">
+          <h3>Security</h3>
+          <ul>
+            <li>Network Scanning</li>
+            <li>Subdomain Discovery</li>
+            <li>SNI Detection</li>
+            <li>Bug Bounty</li>
+          </ul>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-label">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
-                Projects
-            </div>
-            <h2 class="section-title">Featured Work</h2>
-            <div class="projects-grid">
-                <!-- Featured: AdwanceSNI 2.0 -->
-                <div class="project-card featured">
-                    <div class="project-badge">Featured</div>
-                    <div class="project-top">
-                        <div class="project-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                        </div>
-                        <a href="https://github.com/SirYadav1/AdwanceSNI-2.0" target="_blank" class="project-link">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                    </div>
-                    <h3 class="project-title">AdwanceSNI 2.0</h3>
-                    <p class="project-desc">Comprehensive network scanning suite — subdomain discovery, host scanning, IP extraction, and generation in one powerful tool.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Network Security</span>
-                        <span class="tag-star">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            22
-                        </span>
-                    </div>
-                </div>
-
-                <!-- Featured: Zyphron -->
-                <div class="project-card featured">
-                    <div class="project-badge">Featured</div>
-                    <div class="project-top">
-                        <div class="project-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
-                        </div>
-                        <a href="https://github.com/SirYadav1/zyphron-free-dash" target="_blank" class="project-link">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                    </div>
-                    <h3 class="project-title">Zyphron Free Dash</h3>
-                    <p class="project-desc">Full-stack e-commerce dashboard with user management, server allocation, API keys, and a complete ticket system.</p>
-                    <div class="project-tags">
-                        <span>Vue.js</span>
-                        <span>NestJS</span>
-                        <span>TypeScript</span>
-                    </div>
-                </div>
-
-                <!-- Regular Projects -->
-                <div class="project-card">
-                    <div class="project-top">
-                        <div class="project-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        </div>
-                        <a href="https://github.com/SirYadav1/minecraft-afk-bot" target="_blank" class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                    </div>
-                    <h3 class="project-title">Minecraft AFK Bot</h3>
-                    <p class="project-desc">Automated bot with web dashboard, multi-account support, and real-time monitoring.</p>
-                    <div class="project-tags">
-                        <span>JavaScript</span>
-                        <span>Node.js</span>
-                        <span class="tag-star">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            1
-                        </span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-top">
-                        <div class="project-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                        </div>
-                        <a href="https://github.com/SirYadav1/tg-chat-fetch" target="_blank" class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                    </div>
-                    <h3 class="project-title">TG Chat Fetch</h3>
-                    <p class="project-desc">Telegram chat archiver with multi-target backup, date filtering, and auto-resume capability.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Telethon</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-top">
-                        <div class="project-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        </div>
-                        <a href="https://github.com/SirYadav1/AdwanceSNI" target="_blank" class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                    </div>
-                    <h3 class="project-title">AdwanceSNI</h3>
-                    <p class="project-desc">Simple and advanced SNI finding tool for network reconnaissance and security testing.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Security</span>
-                        <span class="tag-star">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            10
-                        </span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-top">
-                        <div class="project-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                        </div>
-                        <a href="https://github.com/SirYadav1/flashscan-go" target="_blank" class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                    </div>
-                    <h3 class="project-title">FlashScan Go</h3>
-                    <p class="project-desc">High-performance security scanner written in Go for blazing fast network analysis.</p>
-                    <div class="project-tags">
-                        <span>Go</span>
-                        <span>Security</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-top">
-                        <div class="project-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-                        </div>
-                        <a href="https://github.com/SirYadav1/insta-downloader" target="_blank" class="project-link">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                        </a>
-                    </div>
-                    <h3 class="project-title">Insta Downloader</h3>
-                    <p class="project-desc">Telegram bot that downloads Instagram videos and converts them to downloadable links.</p>
-                    <div class="project-tags">
-                        <span>Python</span>
-                        <span>Telegram Bot</span>
-                        <span class="tag-star">
-                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            3
-                        </span>
-                    </div>
-                </div>
-            </div>
-            <div class="projects-cta">
-                <a href="https://github.com/SirYadav1?tab=repositories" target="_blank" class="btn btn-ghost">
-                    View All on GitHub
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </a>
-            </div>
+  <!-- TERMINAL -->
+  <section id="terminal" class="terminal-section">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="t-green">$</span> ./terminal <span class="t-dim">--interactive</span>
+      </h2>
+      <p class="section-subtitle">type <code>help</code> and press enter</p>
+      <div class="terminal" id="terminal">
+        <div class="term-bar">
+          <div class="term-dots">
+            <span></span><span></span><span></span>
+          </div>
+          <span class="term-fn">~/portfolio-terminal</span>
         </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-label">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                Skills
-            </div>
-            <h2 class="section-title">Tech Stack</h2>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="skill-card-header">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-                        <h3>Languages</h3>
-                    </div>
-                    <div class="skill-list">
-                        <span>Python</span>
-                        <span>JavaScript</span>
-                        <span>TypeScript</span>
-                        <span>Go</span>
-                        <span>Shell/Bash</span>
-                        <span>HTML/CSS</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card-header">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
-                        <h3>Frameworks</h3>
-                    </div>
-                    <div class="skill-list">
-                        <span>Vue.js</span>
-                        <span>NestJS</span>
-                        <span>Node.js</span>
-                        <span>Telethon</span>
-                        <span>Vite</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card-header">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
-                        <h3>Tools</h3>
-                    </div>
-                    <div class="skill-list">
-                        <span>Git</span>
-                        <span>Docker</span>
-                        <span>Linux</span>
-                        <span>Nginx</span>
-                        <span>PostgreSQL</span>
-                        <span>SQLite</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <div class="skill-card-header">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                        <h3>Security</h3>
-                    </div>
-                    <div class="skill-list">
-                        <span>Network Scanning</span>
-                        <span>Subdomain Discovery</span>
-                        <span>SNI Detection</span>
-                        <span>Bug Bounty</span>
-                    </div>
-                </div>
-            </div>
+        <div class="term-body" id="termBody">
+          <div class="tl"><span class="c-green">Welcome to Sundram's terminal.</span></div>
+          <div class="tl"><span class="c-dim">Type 'help' to see available commands.</span></div>
         </div>
-    </section>
-
-    <!-- TERMINAL -->
-    <section id="terminal" class="terminal-section">
-        <div class="container">
-            <div class="section-label">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg>
-                Terminal
-            </div>
-            <h2 class="section-title">Interactive Terminal</h2>
-            <p class="section-subtitle">Type <code>help</code> to see available commands</p>
-            <div class="terminal">
-                <div class="terminal-chrome">
-                    <div class="terminal-dots">
-                        <span></span><span></span><span></span>
-                    </div>
-                    <span class="terminal-title">sundram@portfolio ~</span>
-                </div>
-                <div class="terminal-body" id="terminalBody">
-                    <div class="term-line"><span class="t-green">Welcome to Sundram's Portfolio Terminal!</span></div>
-                    <div class="term-line"><span class="t-dim">Type 'help' to see available commands.</span></div>
-                </div>
-                <div class="terminal-input-area">
-                    <span class="terminal-prompt">visitor@portfolio:~$</span>
-                    <input type="text" id="terminalInput" class="terminal-input" autofocus spellcheck="false" autocomplete="off" placeholder="type a command...">
-                </div>
-            </div>
+        <div class="term-input-line">
+          <span class="term-prompt">visitor@portfolio:~$</span>
+          <input type="text" id="termInput" class="term-input" autofocus spellcheck="false" autocomplete="off" placeholder="type a command...">
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-label">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                Contact
-            </div>
-            <h2 class="section-title">Let's Connect</h2>
-            <p class="section-subtitle">Have a project in mind? Let's make it happen.</p>
-            <div class="contact-grid">
-                <a href="https://github.com/SirYadav1" target="_blank" class="contact-card">
-                    <div class="contact-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    </div>
-                    <div class="contact-info">
-                        <h4>GitHub</h4>
-                        <span>@SirYadav1</span>
-                    </div>
-                    <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </a>
-                <a href="https://t.me/SirYadav1" target="_blank" class="contact-card">
-                    <div class="contact-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.48-.428-.013-1.252-.242-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
-                    </div>
-                    <div class="contact-info">
-                        <h4>Telegram</h4>
-                        <span>@SirYadav1</span>
-                    </div>
-                    <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </a>
-                <a href="mailto:contact@sundram.dev" class="contact-card">
-                    <div class="contact-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                    </div>
-                    <div class="contact-info">
-                        <h4>Email</h4>
-                        <span>contact@sundram.dev</span>
-                    </div>
-                    <svg class="contact-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2 class="section-title">
+        <span class="t-green">$</span> cat <span class="t-dim">~/contact</span>
+      </h2>
+      <div class="contact-grid">
+        <a href="https://github.com/SirYadav1" target="_blank" class="cc">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+          <span>@SirYadav1</span>
+          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a href="https://t.me/SirYadav" target="_blank" class="cc">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.48-.428-.013-1.252-.242-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+          Telegram
+          <span>@SirYadav</span>
+          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a href="mailto:osamabinladenfromindia@gmail.com" class="cc">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          Email
+          <span>osamabinladenfromindia@gmail.com</span>
+          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a href="https://leetcode.com/u/siryadav1" target="_blank" class="cc">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.624-2.61.963-.965a1.373 1.373 0 0 0-.252-1.958l-.016-.013a1.373 1.373 0 0 0-1.954.232l-.964.964-2.623 2.611c-1.137 1.131-2.887 1.175-4.01.05l-4.278-4.193a3.285 3.285 0 0 1-.688-.984 3.373 3.373 0 0 1-.173-.578 3.21 3.21 0 0 1-.033-1.332 3.35 3.35 0 0 1 .69-1.274l3.85-4.126 5.41-5.619a1.374 1.374 0 0 0 .042-1.943 1.374 1.374 0 0 0-.96-.438zm-.066 5.478a1.374 1.374 0 0 0-.965.434L7.014 11.85a1.374 1.374 0 0 0 .074 1.942c.54.5 1.378.177 1.942-.074l5.414-2.938a1.374 1.374 0 0 0 .586-1.843 1.374 1.374 0 0 0-1.213-.774z"/></svg>
+          LeetCode
+          <span>@SirYadav1</span>
+          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+        <a href="https://x.com/siryadav0" target="_blank" class="cc">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          X / Twitter
+          <span>@siryadav0</span>
+          <svg class="arr" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            <p class="footer-text">Crafted with passion & curiosity</p>
-            <p class="footer-name">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-                Sundram Yadav
-            </p>
-        </div>
-    </footer>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <p>crafted on linux — no ai templates harmed</p>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
