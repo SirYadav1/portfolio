@@ -95,6 +95,32 @@ function typeText() {
 
 typeText();
 
+// === RADAR ANIMATION ===
+const radarWrapper = document.getElementById('radarWrapper');
+if (radarWrapper) {
+    setInterval(() => {
+        const dot = document.createElement('div');
+        dot.className = 'radar-dot';
+        
+        // Random position within a circle of radius 140px
+        const angle = Math.random() * Math.PI * 2;
+        const radius = Math.random() * 140;
+        
+        const x = Math.cos(angle) * radius + 160; // Center is 160
+        const y = Math.sin(angle) * radius + 160;
+        
+        dot.style.left = `${x}px`;
+        dot.style.top = `${y}px`;
+        
+        radarWrapper.appendChild(dot);
+        
+        // Remove after animation (2s)
+        setTimeout(() => {
+            dot.remove();
+        }, 2000);
+    }, 1000 + Math.random() * 1000); // Random interval between 1-2s
+}
+
 // === REVEAL ON SCROLL ===
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
