@@ -98,7 +98,7 @@ document.querySelectorAll('.work-card, .skill-card, .contact-card, .curr-item, .
 // === TERMINAL ===
 const termBody = document.getElementById('termBody');
 const termInput = document.getElementById('termInput');
-const history = [];
+const cmdHistory = [];
 let historyIndex = -1;
 
 function addLine(text, isCommand = false) {
@@ -207,7 +207,7 @@ termInput.addEventListener('keydown', e => {
     if (e.key === 'Enter') {
         const value = termInput.value.trim();
         if (value) {
-            history.unshift(value);
+            cmdHistory.unshift(value);
             historyIndex = -1;
             addLine(value, true);
 
@@ -224,15 +224,15 @@ termInput.addEventListener('keydown', e => {
         termInput.value = '';
     } else if (e.key === 'ArrowUp') {
         e.preventDefault();
-        if (historyIndex < history.length - 1) {
+        if (historyIndex < cmdHistory.length - 1) {
             historyIndex++;
-            termInput.value = history[historyIndex];
+            termInput.value = cmdHistory[historyIndex];
         }
     } else if (e.key === 'ArrowDown') {
         e.preventDefault();
         if (historyIndex > 0) {
             historyIndex--;
-            termInput.value = history[historyIndex];
+            termInput.value = cmdHistory[historyIndex];
         } else {
             historyIndex = -1;
             termInput.value = '';
