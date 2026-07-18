@@ -1,6 +1,6 @@
 %-------------------------
 % Resume - Sundram Yadav
-% Compile: xelatex resume.tex
+% Compile: pdflatex resume.tex
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
@@ -79,11 +79,9 @@
 \begin{center}
   {\Huge \scshape Sundram Yadav} \\[0.3em]
   \small
-  % \faPhone\ +91-XXXXXXXXXX \quad     %% <-- apna phone daalo
+  \faPhone\ +91-9015276758 \quad
   \faEnvelope\ \href{mailto:osamabinladenfromindia@gmail.com}{osamabinladenfromindia@gmail.com} \quad
-  \faLinkedin\ \href{https://linkedin.com/in/SirYadav1}{SirYadav1} \quad
-  \faGithub\ \href{https://github.com/SirYadav1}{SirYadav1} \quad
-  \faLeetCode\ \href{https://leetcode.com/u/siryadav1}{SirYadav1}
+  \faGithub\ \href{https://github.com/SirYadav1}{SirYadav1}
 \end{center}
 
 %-----------EXPERIENCE-----------%
@@ -94,21 +92,21 @@
     {Security Researcher (Bug Bounty)}{2024 -- Present}
     {Various Platforms}{Remote}
     \resumeItemListStart
-      \resumeItem{Identified and disclosed 10+ security vulnerabilities across web applications, including IDOR, XSS, and authentication bypass flaws}
-      \resumeItem{Conducted reconnaissance and penetration testing on 50+ targets, reducing attack surface by identifying misconfigurations}
-      \resumeItem{Collaborated with development teams on responsible disclosure and patch verification}
+      \resumeItem{Identified and disclosed security vulnerabilities across web applications through responsible disclosure programs}
+      \resumeItem{Conducted reconnaissance and penetration testing using custom automation scripts and industry-standard tools}
+      \resumeItem{Collaborated with development teams on patch verification and security advisory documentation}
     \resumeItemListEnd
-    \small\textbf{Tech Stack:} Burp Suite, Nmap, Python, Bash, Linux
+    \small\textbf{Tech Stack:} Python, Bash, Burp Suite, Nmap, Linux
 
   \resumeSubheading
-    {Open Source Contributor}{2023 -- Present}
+    {Open Source Developer}{2023 -- Present}
     {Self-Initiated Projects}{Remote}
     \resumeItemListStart
-      \resumeItem{Built 20+ open-source repositories accumulating 36+ stars across security, automation, and web development tools}
-      \resumeItem{Developed a network scanning suite adopted by 22+ users for subdomain discovery and IP reconnaissance}
-      \resumeItem{Created Telegram bots and automation scripts processing 1000+ requests/day for assignment verification}
+      \resumeItem{Built and maintained 20+ open-source repositories with 510+ total commits and 40+ cumulative stars}
+      \resumeItem{Developed network reconnaissance tools (AdwanceSNI series) adopted by the security community with 24 stars and 9 forks}
+      \resumeItem{Created Telegram bots and automation scripts handling real-time data fetching and processing workflows}
     \resumeItemListEnd
-    \small\textbf{Tech Stack:} Python, Node.js, Go, Docker, Git, CI/CD
+    \small\textbf{Tech Stack:} Python, Go, Node.js, PHP, Kotlin, Docker, Git
 
 \resumeSubHeadingListEnd
 
@@ -117,31 +115,47 @@
 \resumeSubHeadingListStart
 
   \resumeProjectHeading
-    {\textbf{Zyphron Free Dash} $|$ \emph{NestJS, Vue 3, TypeORM, SQLite, Pterodactyl}}{\href{https://github.com/SirYadav1/zyphron-free-dash}{\small\faGithub}}
+    {\textbf{AdwanceSNI 2.0} $|$ \emph{Python, Socket Programming, Multithreading, Shell}}{\href{https://github.com/SirYadav1/AdwanceSNI-2.0}{\small\faGithub}}
     \resumeItemListStart
-      \resumeItem{Architected full-stack game server hosting platform serving 130+ REST API endpoints across 20+ database entities}
-      \resumeItem{Implemented credits-based economy with daily login rewards, AFK earnings, and coin shop processing 100+ transactions/day}
-      \resumeItem{Integrated Pterodactyl panel API for automated server deployment, suspension, and renewal workflows}
+      \resumeItem{Built multithreaded network reconnaissance suite for subdomain discovery, host scanning, and IP extraction -- 75 commits, 24 stars}
+      \resumeItem{Reduced scan time by 60\% using concurrent workers and optimized socket connections with custom thread pooling}
+      \resumeItem{Implemented subfinder binary integration, escaped quote handling, and pip install packaging for production deployment}
     \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{AdwanceSNI 2.0} $|$ \emph{Python, Socket Programming, Multithreading}}{\href{https://github.com/SirYadav1/AdwanceSNI-2.0}{\small\faGithub}}
+    {\textbf{AirBeats} $|$ \emph{Kotlin, Android SDK, Google Sign-In, Media Player APIs}}{\href{https://github.com/SirYadav1/AirBeats}{\small\faGithub}}
     \resumeItemListStart
-      \resumeItem{Built multithreaded network reconnaissance suite performing subdomain discovery and host scanning in parallel}
-      \resumeItem{Reduced scan time by 60\% using concurrent workers and optimized socket connections}
+      \resumeItem{Developed Android music player app with 100+ commits featuring concert-themed UI, onboarding flow, and Google Sign-In integration}
+      \resumeItem{Implemented CredentialManager with fallback to legacy GoogleSignInClient, resolving SHA-1 missing crash scenarios}
+      \resumeItem{Built custom media playback system with background blur effects, auth button styling, and error toast notifications}
     \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{IGNOU Grade Card Bot} $|$ \emph{Python, BeautifulSoup, Telegram Bot API}}{\href{https://github.com/SirYadav1/ignou-gradecard-bot}{\small\faGithub}}
+    {\textbf{Zyphron Free Dash} $|$ \emph{Vue.js, NestJS, TypeORM, SQLite, Pterodactyl}}{\href{https://github.com/SirYadav1/zyphron-free-dash}{\small\faGithub}}
     \resumeItemListStart
-      \resumeItem{Developed stateless Telegram bot scraping IGNOU portals for real-time grade card and assignment data}
-      \resumeItem{Handles CBCS and non-CBCS programs with automated form navigation through ASP.NET ViewState flow}
+      \resumeItem{Architected full-stack game server hosting platform with credits-based economy and Pterodactyl panel integration}
+      \resumeItem{Implemented 130+ REST API endpoints across 20+ database entities with RBAC, 2FA, and email automation}
+      \resumeItem{Built admin dashboard with user management, SMTP configuration, and server deployment workflows}
     \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{TG Chat Fetch} $|$ \emph{Python, Telethon, Asyncio}}{\href{https://github.com/SirYadav1/tg-chat-fetch}{\small\faGithub}}
+    {\textbf{VTEX Files Manager} $|$ \emph{Go, REST API, CLI, Shell}}{\href{https://github.com/SirYadav1/vtex-files-manager}{\small\faGithub}}
     \resumeItemListStart
-      \resumeItem{Built async Telegram chat archiver supporting multi-target backup with auto-resume on interrupt}
+      \resumeItem{Created CLI tool for VTEX e-commerce file management with cross-filesystem binary move and self-update capabilities}
+      \resumeItem{Integrated GraphQL API client with file existence checks and typed error handling for upload workflows}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{API Rate Limiter Dashboard} $|$ \emph{Node.js, Express, SQLite, WebSocket}}{\href{https://github.com/SirYadav1/api-rate-limiter}{\small\faGithub}}
+    \resumeItemListStart
+      \resumeItem{Built real-time API monitoring dashboard with Express backend, SQLite storage, and WebSocket live updates}
+      \resumeItem{Implemented burst simulation mode, XSS input sanitization, and Docker containerized deployment}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{FlashScan Go} $|$ \emph{Go, Concurrent Programming}}{\href{https://github.com/SirYadav1/flashscan-go}{\small\faGithub}}
+    \resumeItemListStart
+      \resumeItem{Developed high-performance security scanner in Go with parallel scanning and custom port range configuration}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -153,7 +167,7 @@
     {BCA (Bachelor of Computer Applications)}{2024 -- Present}
     {SPU University}{Himachal Pradesh}
   \resumeSubheading
-    {12th (Arts) -- 60\%}{2023}
+    {12th (Arts) -- 75.6\%}{2023}
     {Government Senior Secondary Boy School}{Himachal Pradesh}
 \resumeSubHeadingListEnd
 
@@ -162,19 +176,19 @@
 \begin{multicols}{2}
 \resumeSubHeadingListStart
   \item{
-    \textbf{Programming Languages:} PHP, Python, JavaScript, TypeScript, Go, Bash
+    \textbf{Programming Languages:} Python, PHP, Go, JavaScript, TypeScript, Kotlin, Bash
   }
   \item{
-    \textbf{Backend:} Node.js, Express.js, NestJS, REST APIs
+    \textbf{Backend:} Node.js, Express.js, NestJS, REST APIs, GraphQL
   }
   \item{
-    \textbf{Frontend:} Vue.js, React, Flutter
+    \textbf{Frontend:} Vue.js, React
   }
   \item{
     \textbf{Databases:} MySQL, SQLite, TypeORM
   }
   \item{
-    \textbf{Tools \& Infra:} Linux, Docker, Nginx, Git, Cloudflare
+    \textbf{Tools \& Infra:} Linux, Docker, Nginx, Git, WebSocket
   }
   \item{
     \textbf{Security:} Network Scanning, Burp Suite, Nmap, Bug Bounty
@@ -183,7 +197,7 @@
     \textbf{CS Fundamentals:} Data Structures, Operating Systems, Computer Networks
   }
   \item{
-    \textbf{Misc:} Multithreading, Web Scraping, Automation, System Design
+    \textbf{Misc:} Multithreading, Web Scraping, CLI Development, System Design
   }
 \resumeSubHeadingListEnd
 \end{multicols}
@@ -191,10 +205,10 @@
 %-----------ACHIEVEMENTS-----------%
 \section{Achievements}
 \resumeSubHeadingListStart
-  \resumeItem{Solved 150+ problems on LeetCode with consistent problem-solving practice}
+  \resumeItem{510+ total commits across 20+ open-source repositories with 40+ cumulative stars on GitHub}
+  \resumeItem{AdwanceSNI 2.0 -- 24 stars, 9 forks, widely used network reconnaissance tool in security community}
   \resumeItem{Discovered and responsibly disclosed security vulnerabilities through bug bounty programs}
-  \resumeItem{Built 20+ open-source projects with 36+ cumulative stars on GitHub}
-  \resumeItem{Actively contributing to security research and automation tools in open-source community}
+  \resumeItem{Built production-ready Android app (AirBeats) with 100+ commits, Google Sign-In, and custom media player}
 \resumeSubHeadingListEnd
 
 \end{document}
