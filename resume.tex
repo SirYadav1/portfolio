@@ -1,179 +1,199 @@
-% ============================================
-%  Sundram Yadav — Resume
-%  Compile: xelatex resume.tex
-% ============================================
-\documentclass[10pt,a4paper]{article}
+%-------------------------
+% Resume in Latex
+% Author : Sundram Yadav
+% License : MIT
+%------------------------
 
-% --- Packages ---
-\usepackage[margin=0.6in]{geometry}
-\usepackage{parskip}
-\usepackage{hyperref}
-\usepackage{fontspec}
+\documentclass[letterpaper,11pt]{article}
+
 \usepackage{fontawesome5}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{xcolor}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage{tikz}
-\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
 
-% --- Colors ---
-\definecolor{accent}{HTML}{2563EB}
-\definecolor{dark}{HTML}{1E293B}
-\definecolor{muted}{HTML}{64748B}
-\definecolor{border}{HTML}{E2E8F0}
+\usepackage[default]{lato}
 
-% --- Fonts ---
-\setmainfont{Inter}[
-  Scale=0.95,
-  Extension=.ttf,
-  UprightFont=*-Regular,
-  BoldFont=*-Bold,
-  ItalicFont=*-Italic
-]
-\setmonofont{JetBrainsMono}[
-  Scale=0.85,
-  Extension=.ttf,
-  UprightFont=*-Regular,
-  BoldFont=*-Bold
-]
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
-% --- Section formatting ---
-\titleformat{\section}
-  {\Large\bfseries\color{dark}}{}{0em}{}[\vspace{-0.3em}\rule{\textwidth}{0.5pt}]
-\titlespacing*{\section}{0pt}{1em}{0.5em}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
 
-\titleformat{\subsection}
-  {\bfseries\color{dark}}{}{0em}{}
-\titlespacing*{\subsection}{0pt}{0.5em}{0.2em}
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
 
-% --- Custom commands ---
-\newcommand{\tag}[1]{%
-  \tikz[baseline=(t.base)]\node[draw=border,fill=gray!5,rounded corners=2pt,inner sep=3pt,font=\small] (t) {#1};%
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+\pdfgentounicode=1
+
+%-------------------------%
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{{#1 \vspace{-2pt}}}
 }
 
-\newcommand{\project}[3]{%
-  \noindent\textbf{#1} \hfill \textcolor{muted}{\small #2}\par
-  \small #3\par
-  \vspace{0.4em}
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\edu}[4]{%
-  \noindent\textbf{#1} \hfill \textcolor{muted}{\small #2}\par
-  \small\textcolor{muted}{#3}\par
-  \small\textcolor{muted}{#4}\par
-  \vspace{0.4em}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
 }
 
-% ============================================
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\definecolor{Black}{RGB}{0, 0, 0}
+\newcommand{\seticon}[1]{\textcolor{Black}{\csname #1\endcsname}}
+
 \begin{document}
 
-% --- Header ---
-\begin{minipage}{0.78\textwidth}
-  {\HUGE\bfseries\color{dark} Sundram Yadav}\\[0.15em]
-  {\large\color{accent} Backend Developer \& Security Researcher}\\[0.5em]
+%----------HEADING----------%
+\begin{center}
+  {\Huge \scshape Sundram Yadav} \\[0.3em]
   \small
-  \faEnvelope\ \href{mailto:osamabinladenfromindia@gmail.com}{osamabinladenfromindia@gmail.com} \quad
-  \faGithub\ \href{https://github.com/SirYadav1}{SirYadav1} \quad
-  \faTelegram\ \href{https://t.me/SirYadav}{SirYadav} \\[0.1em]
-  \faMapMarker\ Uttar Pradesh, India \quad
-  \faGlobe\ \href{https://github.com/SirYadav1}{github.com/SirYadav1}
-\end{minipage}%
-\begin{minipage}{0.2\textwidth}
-  \raggedleft
-  % -- Add your photo here --
-  % \includegraphics[width=0.9\textwidth,rounded corners=4pt]{photo.jpg}
-  \textcolor{muted}{\small[Photo]} % remove this line after adding photo
-\end{minipage}
+  \faEnvelope \href{mailto:osamabinladenfromindia@gmail.com}{osamabinladenfromindia@gmail.com} \quad
+  \faGithub \href{https://github.com/SirYadav1}{SirYadav1} \quad
+  \faTelegram \href{https://t.me/SirYadav}{SirYadav} \quad
+  \faMapMarker\ Uttar Pradesh, India
+\end{center}
 
-\vspace{0.8em}
-
-% --- Summary ---
-\section{Summary}
-Backend developer building practical tools — network scanners, Telegram bots, automation scripts. Passionate about security research and ethical hacking. Linux enthusiast. Focused on simple, working solutions over unnecessary complexity.
-
-% --- Skills ---
-\section{Skills}
-\small
-\noindent
-\textbf{Languages:} \tag{PHP} \tag{Node.js} \tag{Python} \tag{TypeScript} \tag{Go} \tag{Bash} \\[0.3em]
-\textbf{Frameworks:} \tag{Express.js} \tag{Vue.js} \tag{NestJS} \tag{React} \tag{Flutter} \\[0.3em]
-\textbf{Infrastructure:} \tag{Linux} \tag{Docker} \tag{Nginx} \tag{MySQL} \tag{SQLite} \tag{Cloudflare} \\[0.3em]
-\textbf{Security:} \tag{Network Scanning} \tag{Bug Bounty} \tag{SNI Detection} \tag{Subdomain Discovery}
-
-% --- Experience / Projects ---
-\section{Projects}
-
-\project{Zyphron Free Dash}{NestJS + Vue 3}{%
-  Full-stack game server hosting platform with credits-based economy.
-  130+ API endpoints, 20+ DB entities, Pterodactyl integration, RBAC, 2FA, email automation.
-  \hfill \href{https://github.com/SirYadav1/zyphron-free-dash}{\small\faGithub}
-}
-
-\project{AdwanceSNI 2.0}{Python}{%
-  Network scanning suite — subdomain discovery, host scanning, IP extraction, IP generation.
-  All-in-one security reconnaissance tool. 22 stars.
-  \hfill \href{https://github.com/SirYadav1/AdwanceSNI-2.0}{\small\faGithub}
-}
-
-\project{IGNOU Grade Card Bot}{Python + BeautifulSoup}{%
-  Telegram bot scraping IGNOU portals for assignment status and grade cards.
-  Supports CBCS and non-CBCS programs. Real-time data, no database required.
-  \hfill \href{https://github.com/SirYadav1/ignou-gradecard-bot}{\small\faGithub}
-}
-
-\project{TG Chat Fetch}{Python + Telethon}{%
-  Multi-target Telegram chat archiver with date filtering, auto-resume on interrupt, media backup.
-  \hfill \href{https://github.com/SirYadav1/tg-chat-fetch}{\small\faGithub}
-}
-
-\project{FlashScan Go}{Go}{%
-  High-performance security scanner optimized for speed. Parallel scanning, custom port ranges.
-  \hfill \href{https://github.com/SirYadav1/flashscan-go}{\small\faGithub}
-}
-
-\project{AirBeats}{Electron + JavaScript}{%
-  Desktop music player built with Electron. Cross-platform, custom UI, local playback.
-  \hfill \href{https://github.com/SirYadav1/AirBeats}{\small\faGithub}
-}
-
-\project{XHS Business Idea Validator}{Python}{%
-  Analyzes Xiaohongshu data to identify market opportunities and generate automated validation reports.
-  \hfill \href{https://github.com/SirYadav1/XHS_Business_Idea_Validator}{\small\faGithub}
-}
-
-% --- Work Experience ---
+%-----------EXPERIENCE-----------%
 \section{Experience}
+\resumeSubHeadingListStart
 
-\noindent\textbf{Security Researcher (Bug Bounty)} \hfill \textcolor{muted}{\small 2024 -- Present}\par
-\small Bug bounty hunting across various platforms. Identified and reported vulnerabilities in web applications and APIs.
+  \resumeSubheading
+    {Security Researcher (Bug Bounty)}{2024 -- Present}
+    {Various Platforms}{Remote}
+    \resumeItemListStart
+      \resumeItem{Identified and reported security vulnerabilities in web applications and APIs}
+      \resumeItem{Performed reconnaissance, penetration testing, and responsible disclosure}
+      \resumeItem{Worked across multiple bug bounty programs with consistent findings}
+    \resumeItemListEnd
 
-\vspace{0.3em}
-\noindent\textbf{Open Source Contributor} \hfill \textcolor{muted}{\small 2023 -- Present}\par
-\small 20+ public repositories. Building tools for network security, Telegram automation, and web development.
+  \resumeSubheading
+    {Open Source Contributor}{2023 -- Present}
+    {Self-Initiated Projects}{Remote}
+    \resumeItemListStart
+      \resumeItem{Built and maintained 20+ public repositories across security, automation, and web development}
+      \resumeItem{36+ cumulative stars across projects with active user adoption}
+      \resumeItem{Developed tools for network scanning, Telegram automation, and web scraping}
+    \resumeItemListEnd
 
-% --- Education ---
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------%
+\section{Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {\textbf{Zyphron Free Dash} $|$ \emph{NestJS, Vue 3, TypeORM, SQLite}}{\href{https://github.com/SirYadav1/zyphron-free-dash}{\small\faGithub}}
+    \resumeItemListStart
+      \resumeItem{Full-stack game server hosting platform with credits-based economy and Pterodactyl integration}
+      \resumeItem{130+ API endpoints, 20+ database entities, RBAC, 2FA authentication, email automation}
+      \resumeItem{Admin dashboard with user management, SMTP config, and system settings}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{AdwanceSNI 2.0} $|$ \emph{Python}}{\href{https://github.com/SirYadav1/AdwanceSNI-2.0}{\small\faGithub}}
+    \resumeItemListStart
+      \resumeItem{Network scanning suite for subdomain discovery, host scanning, and IP extraction}
+      \resumeItem{22 stars on GitHub; widely used security reconnaissance tool}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{IGNOU Grade Card Bot} $|$ \emph{Python, BeautifulSoup, Telegram API}}{\href{https://github.com/SirYadav1/ignou-gradecard-bot}{\small\faGithub}}
+    \resumeItemListStart
+      \resumeItem{Telegram bot scraping IGNOU portals for real-time assignment status and grade cards}
+      \resumeItem{Supports both CBCS (4-year) and non-CBCS (3-year) programs}
+      \resumeItem{Stateless design -- no database required, fresh data on every request}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{TG Chat Fetch} $|$ \emph{Python, Telethon}}{\href{https://github.com/SirYadav1/tg-chat-fetch}{\small\faGithub}}
+    \resumeItemListStart
+      \resumeItem{Multi-target Telegram chat archiver with date filtering and auto-resume on interrupt}
+    \resumeItemListEnd
+
+  \resumeProjectHeading
+    {\textbf{FlashScan Go} $|$ \emph{Go}}{\href{https://github.com/SirYadav1/flashscan-go}{\small\faGithub}}
+    \resumeItemListStart
+      \resumeItem{High-performance security scanner with parallel scanning and custom port ranges}
+    \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------%
+\section{Skills}
+\resumeSubHeadingListStart
+  \item{
+    \textbf{Languages:} PHP, Node.js, Python, TypeScript, Go, Bash \\
+    \textbf{Frameworks:} Express.js, Vue.js, NestJS, React, Flutter \\
+    \textbf{Infrastructure:} Linux (Ubuntu/Alpine), Docker, Nginx, MySQL, SQLite, Cloudflare \\
+    \textbf{Security:} Network Scanning, Bug Bounty Hunting, SNI Detection, Subdomain Discovery
+  }
+\resumeSubHeadingListEnd
+
+%-----------ACHIEVEMENTS-----------%
+\section{Achievements}
+\resumeSubHeadingListStart
+  \resumeItem{Bug Bounty --- Discovered and reported vulnerabilities in production applications}
+  \resumeItem{Open Source --- 20+ repositories, 36+ cumulative stars across projects}
+  \resumeItem{Hackathons --- Built and shipped functional tools under time constraints}
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------%
 \section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {BCA (Bachelor of Computer Applications)}{2024 -- Present}
+    {SPU University}{Himachal Pradesh}
+    \resumeItemListStart
+      \resumeItem{3rd Semester}
+    \resumeItemListEnd
 
-\edu{BCA (Bachelor of Computer Applications)}{2024 -- Present}{3rd Semester}{SPU University, Himachal Pradesh}
-
-\edu{12th (Arts)}{2023}{Government Senior Secondary Boy School}{Himachal Pradesh}
-
-% --- Certifications / Achievements ---
-\section{Certifications \& Achievements}
-\small
-\begin{itemize}[left=0pt,label={},nosep]
-  \item \textbf{Bug Bounty} — Discovered and reported security vulnerabilities in production applications.
-  \item \textbf{Open Source} — 20+ repositories, 36+ cumulative stars across projects.
-  \item \textbf{Hackathons} — Built and shipped functional tools under time constraints.
-\end{itemize}
-
-% --- Languages ---
-\section{Languages}
-\small
-\noindent
-\tag{Hindi} \tag{English} \tag{Bhojpuri}
-
-\vspace{1em}
-\centering\small\textcolor{muted}{\faGithub\ \href{https://github.com/SirYadav1}{github.com/SirYadav1} \qquad \faGlobe\ Portfolio: \href{https://github.com/SirYadav1/portfolio}{SirYadav1/portfolio}}
+  \resumeSubheading
+    {12th (Arts)}{2023}
+    {Government Senior Secondary Boy School}{Himachal Pradesh}
+\resumeSubHeadingListEnd
 
 \end{document}
