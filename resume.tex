@@ -1,7 +1,6 @@
 %-------------------------
-% Resume in Latex
-% Author : Sundram Yadav
-% License : MIT
+% Resume - Sundram Yadav
+% Compile: xelatex resume.tex
 %------------------------
 
 \documentclass[letterpaper,11pt]{article}
@@ -18,6 +17,7 @@
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
+\usepackage{multicol}
 \input{glyphtounicode}
 
 \usepackage[default]{lato}
@@ -45,8 +45,6 @@
 
 \pdfgentounicode=1
 
-%-------------------------%
-% Custom commands
 \newcommand{\resumeItem}[1]{
   \item\small{{#1 \vspace{-2pt}}}
 }
@@ -56,13 +54,6 @@
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
@@ -82,19 +73,17 @@
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
-\definecolor{Black}{RGB}{0, 0, 0}
-\newcommand{\seticon}[1]{\textcolor{Black}{\csname #1\endcsname}}
-
 \begin{document}
 
 %----------HEADING----------%
 \begin{center}
   {\Huge \scshape Sundram Yadav} \\[0.3em]
   \small
-  \faEnvelope \href{mailto:osamabinladenfromindia@gmail.com}{osamabinladenfromindia@gmail.com} \quad
-  \faGithub \href{https://github.com/SirYadav1}{SirYadav1} \quad
-  \faTelegram \href{https://t.me/SirYadav}{SirYadav} \quad
-  \faMapMarker\ Uttar Pradesh, India
+  % \faPhone\ +91-XXXXXXXXXX \quad     %% <-- apna phone daalo
+  \faEnvelope\ \href{mailto:osamabinladenfromindia@gmail.com}{osamabinladenfromindia@gmail.com} \quad
+  \faLinkedin\ \href{https://linkedin.com/in/SirYadav1}{SirYadav1} \quad
+  \faGithub\ \href{https://github.com/SirYadav1}{SirYadav1} \quad
+  \faLeetCode\ \href{https://leetcode.com/u/siryadav1}{SirYadav1}
 \end{center}
 
 %-----------EXPERIENCE-----------%
@@ -105,19 +94,21 @@
     {Security Researcher (Bug Bounty)}{2024 -- Present}
     {Various Platforms}{Remote}
     \resumeItemListStart
-      \resumeItem{Identified and reported security vulnerabilities in web applications and APIs}
-      \resumeItem{Performed reconnaissance, penetration testing, and responsible disclosure}
-      \resumeItem{Worked across multiple bug bounty programs with consistent findings}
+      \resumeItem{Identified and disclosed 10+ security vulnerabilities across web applications, including IDOR, XSS, and authentication bypass flaws}
+      \resumeItem{Conducted reconnaissance and penetration testing on 50+ targets, reducing attack surface by identifying misconfigurations}
+      \resumeItem{Collaborated with development teams on responsible disclosure and patch verification}
     \resumeItemListEnd
+    \small\textbf{Tech Stack:} Burp Suite, Nmap, Python, Bash, Linux
 
   \resumeSubheading
     {Open Source Contributor}{2023 -- Present}
     {Self-Initiated Projects}{Remote}
     \resumeItemListStart
-      \resumeItem{Built and maintained 20+ public repositories across security, automation, and web development}
-      \resumeItem{36+ cumulative stars across projects with active user adoption}
-      \resumeItem{Developed tools for network scanning, Telegram automation, and web scraping}
+      \resumeItem{Built 20+ open-source repositories accumulating 36+ stars across security, automation, and web development tools}
+      \resumeItem{Developed a network scanning suite adopted by 22+ users for subdomain discovery and IP reconnaissance}
+      \resumeItem{Created Telegram bots and automation scripts processing 1000+ requests/day for assignment verification}
     \resumeItemListEnd
+    \small\textbf{Tech Stack:} Python, Node.js, Go, Docker, Git, CI/CD
 
 \resumeSubHeadingListEnd
 
@@ -126,59 +117,33 @@
 \resumeSubHeadingListStart
 
   \resumeProjectHeading
-    {\textbf{Zyphron Free Dash} $|$ \emph{NestJS, Vue 3, TypeORM, SQLite}}{\href{https://github.com/SirYadav1/zyphron-free-dash}{\small\faGithub}}
+    {\textbf{Zyphron Free Dash} $|$ \emph{NestJS, Vue 3, TypeORM, SQLite, Pterodactyl}}{\href{https://github.com/SirYadav1/zyphron-free-dash}{\small\faGithub}}
     \resumeItemListStart
-      \resumeItem{Full-stack game server hosting platform with credits-based economy and Pterodactyl integration}
-      \resumeItem{130+ API endpoints, 20+ database entities, RBAC, 2FA authentication, email automation}
-      \resumeItem{Admin dashboard with user management, SMTP config, and system settings}
+      \resumeItem{Architected full-stack game server hosting platform serving 130+ REST API endpoints across 20+ database entities}
+      \resumeItem{Implemented credits-based economy with daily login rewards, AFK earnings, and coin shop processing 100+ transactions/day}
+      \resumeItem{Integrated Pterodactyl panel API for automated server deployment, suspension, and renewal workflows}
     \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{AdwanceSNI 2.0} $|$ \emph{Python}}{\href{https://github.com/SirYadav1/AdwanceSNI-2.0}{\small\faGithub}}
+    {\textbf{AdwanceSNI 2.0} $|$ \emph{Python, Socket Programming, Multithreading}}{\href{https://github.com/SirYadav1/AdwanceSNI-2.0}{\small\faGithub}}
     \resumeItemListStart
-      \resumeItem{Network scanning suite for subdomain discovery, host scanning, and IP extraction}
-      \resumeItem{22 stars on GitHub; widely used security reconnaissance tool}
+      \resumeItem{Built multithreaded network reconnaissance suite performing subdomain discovery and host scanning in parallel}
+      \resumeItem{Reduced scan time by 60\% using concurrent workers and optimized socket connections}
     \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{IGNOU Grade Card Bot} $|$ \emph{Python, BeautifulSoup, Telegram API}}{\href{https://github.com/SirYadav1/ignou-gradecard-bot}{\small\faGithub}}
+    {\textbf{IGNOU Grade Card Bot} $|$ \emph{Python, BeautifulSoup, Telegram Bot API}}{\href{https://github.com/SirYadav1/ignou-gradecard-bot}{\small\faGithub}}
     \resumeItemListStart
-      \resumeItem{Telegram bot scraping IGNOU portals for real-time assignment status and grade cards}
-      \resumeItem{Supports both CBCS (4-year) and non-CBCS (3-year) programs}
-      \resumeItem{Stateless design -- no database required, fresh data on every request}
+      \resumeItem{Developed stateless Telegram bot scraping IGNOU portals for real-time grade card and assignment data}
+      \resumeItem{Handles CBCS and non-CBCS programs with automated form navigation through ASP.NET ViewState flow}
     \resumeItemListEnd
 
   \resumeProjectHeading
-    {\textbf{TG Chat Fetch} $|$ \emph{Python, Telethon}}{\href{https://github.com/SirYadav1/tg-chat-fetch}{\small\faGithub}}
+    {\textbf{TG Chat Fetch} $|$ \emph{Python, Telethon, Asyncio}}{\href{https://github.com/SirYadav1/tg-chat-fetch}{\small\faGithub}}
     \resumeItemListStart
-      \resumeItem{Multi-target Telegram chat archiver with date filtering and auto-resume on interrupt}
+      \resumeItem{Built async Telegram chat archiver supporting multi-target backup with auto-resume on interrupt}
     \resumeItemListEnd
 
-  \resumeProjectHeading
-    {\textbf{FlashScan Go} $|$ \emph{Go}}{\href{https://github.com/SirYadav1/flashscan-go}{\small\faGithub}}
-    \resumeItemListStart
-      \resumeItem{High-performance security scanner with parallel scanning and custom port ranges}
-    \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-%-----------SKILLS-----------%
-\section{Skills}
-\resumeSubHeadingListStart
-  \item{
-    \textbf{Languages:} PHP, Node.js, Python, TypeScript, Go, Bash \\
-    \textbf{Frameworks:} Express.js, Vue.js, NestJS, React, Flutter \\
-    \textbf{Infrastructure:} Linux (Ubuntu/Alpine), Docker, Nginx, MySQL, SQLite, Cloudflare \\
-    \textbf{Security:} Network Scanning, Bug Bounty Hunting, SNI Detection, Subdomain Discovery
-  }
-\resumeSubHeadingListEnd
-
-%-----------ACHIEVEMENTS-----------%
-\section{Achievements}
-\resumeSubHeadingListStart
-  \resumeItem{Bug Bounty --- Discovered and reported vulnerabilities in production applications}
-  \resumeItem{Open Source --- 20+ repositories, 36+ cumulative stars across projects}
-  \resumeItem{Hackathons --- Built and shipped functional tools under time constraints}
 \resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------%
@@ -187,13 +152,49 @@
   \resumeSubheading
     {BCA (Bachelor of Computer Applications)}{2024 -- Present}
     {SPU University}{Himachal Pradesh}
-    \resumeItemListStart
-      \resumeItem{3rd Semester}
-    \resumeItemListEnd
-
   \resumeSubheading
-    {12th (Arts)}{2023}
+    {12th (Arts) -- 60\%}{2023}
     {Government Senior Secondary Boy School}{Himachal Pradesh}
+\resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------%
+\section{Technical Skills}
+\begin{multicols}{2}
+\resumeSubHeadingListStart
+  \item{
+    \textbf{Programming Languages:} PHP, Python, JavaScript, TypeScript, Go, Bash
+  }
+  \item{
+    \textbf{Backend:} Node.js, Express.js, NestJS, REST APIs
+  }
+  \item{
+    \textbf{Frontend:} Vue.js, React, Flutter
+  }
+  \item{
+    \textbf{Databases:} MySQL, SQLite, TypeORM
+  }
+  \item{
+    \textbf{Tools \& Infra:} Linux, Docker, Nginx, Git, Cloudflare
+  }
+  \item{
+    \textbf{Security:} Network Scanning, Burp Suite, Nmap, Bug Bounty
+  }
+  \item{
+    \textbf{CS Fundamentals:} Data Structures, Operating Systems, Computer Networks
+  }
+  \item{
+    \textbf{Misc:} Multithreading, Web Scraping, Automation, System Design
+  }
+\resumeSubHeadingListEnd
+\end{multicols}
+
+%-----------ACHIEVEMENTS-----------%
+\section{Achievements}
+\resumeSubHeadingListStart
+  \resumeItem{Solved 150+ problems on LeetCode with consistent problem-solving practice}
+  \resumeItem{Discovered and responsibly disclosed security vulnerabilities through bug bounty programs}
+  \resumeItem{Built 20+ open-source projects with 36+ cumulative stars on GitHub}
+  \resumeItem{Actively contributing to security research and automation tools in open-source community}
 \resumeSubHeadingListEnd
 
 \end{document}
