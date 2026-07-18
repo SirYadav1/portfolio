@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SirYadav1 — Sundram Yadav</title>
+    <link rel="icon" href="https://avatars.githubusercontent.com/u/159863013?v=4">
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- NAV -->
+    <nav class="nav" id="nav">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo">
+                <img src="https://avatars.githubusercontent.com/u/159863013?v=4" alt="avatar" class="nav-avatar">
+                <span class="logo-text">~/sundram</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about">about</a>
+                <a href="#work">work</a>
+                <a href="#skills">skills</a>
+                <a href="#terminal">terminal</a>
+                <a href="#contact">contact</a>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                <span>open for work</span>
+            </div>
+            <h1 class="hero-title">
+                Sundram Yadav
+            </h1>
+            <p class="hero-subtitle">
+                <span class="typing-text" id="typingText"></span><span class="cursor">|</span>
+            </p>
+            <p class="hero-desc">
+                Building tools that scan networks, archive chats, and automate everything. Security researcher. Linux
+                enthusiast.
+            </p>
+            <div class="hero-actions">
+                <a href="#work" class="btn btn-primary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                        <circle cx="12" cy="12" r="3" />
+                    </svg>
+                    View Projects
+                </a>
+                <a href="https://github.com/SirYadav1" target="_blank" class="btn btn-secondary">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    GitHub
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num">21</span>
+                    <span class="stat-label">repos</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">36</span>
+                    <span class="stat-label">stars</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">7</span>
+                    <span class="stat-label">languages</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">600+</span>
+                    <span class="stat-label">contributions</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">01</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Backend developer specializing in <span class="highlight">PHP, Node.js, and Python</span>. I
+                        build practical tools — network scanners, telegram bots, automation scripts. Software that
+                        actually solves problems.</p>
+                    <p>Passionate about <span class="highlight">security research</span> and ethical hacking. If it
+                        involves breaking things in a controlled environment, I'm there.</p>
+                    <p>I believe in simplicity over complexity. If a bash script does the job efficiently, that's what I
+                        use.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-header">
+                        <div class="card-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <span class="card-title">~/about.md</span>
+                    </div>
+                    <div class="card-body">
+                        <div class="code-line"><span class="code-key">role:</span> <span class="code-val">Backend
+                                Developer</span></div>
+                        <div class="code-line"><span class="code-key">focus:</span> <span class="code-val">Security &
+                                Automation</span></div>
+                        <div class="code-line"><span class="code-key">stack:</span> <span class="code-val">PHP, Node.js,
+                                Python, Go</span></div>
+                        <div class="code-line"><span class="code-key">os:</span> <span class="code-val">Linux
+                                (Ubuntu/Alpine)</span></div>
+                        <div class="code-line"><span class="code-key">origin:</span> <span class="code-val">India, Uttar Pradesh</span></div>
+                        <div class="code-line"><span class="code-key">languages:</span> <span class="code-val">Hindi, English, Bhojpuri</span></div>
+                        <div class="code-line"><span class="code-key">status:</span> <span
+                                class="code-val code-green">open for work</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="currently-section">
+                <h3>Currently Working On</h3>
+                <div class="currently-items">
+                    <div class="curr-item">
+                        <span class="curr-icon">🔍</span>
+                        <span>Building network scanning tools</span>
+                    </div>
+                    <div class="curr-item">
+                        <span class="curr-icon">🚀</span>
+                        <span>Learning Go deeper</span>
+                    </div>
+                    <div class="curr-item">
+                        <span class="curr-icon">🛡️</span>
+                        <span>Bug bounty recon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work" class="work">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">02</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
+            <div class="work-grid">
+
+                <article class="work-card featured">
+                    <div class="wc-badge">featured</div>
+                    <div class="wc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <circle cx="11" cy="11" r="8" />
+                            <path d="m21 21-4.3-4.3" />
+                        </svg>
+                    </div>
+                    <h3 class="wc-title">AdwanceSNI 2.0</h3>
+                    <p class="wc-desc">Network scanning suite — subdomain discovery, host scanning, IP extraction.
+                        Python-based, one tool to do it all.</p>
+                    <div class="wc-tags">
+                        <span>Python</span>
+                        <span>Security</span>
+                        <span class="tag-star">★ 22</span>
+                    </div>
+                    <a href="https://github.com/SirYadav1/AdwanceSNI-2.0" target="_blank" class="wc-link">
+                        View Project
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7" />
+                            <polyline points="7 7 17 7 17 17" />
+                        </svg>
+                    </a>
+                </article>
+
+                <article class="work-card featured">
+                    <div class="wc-badge">featured</div>
+                    <div class="wc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2" />
+                            <line x1="3" y1="9" x2="21" y2="9" />
+                            <line x1="9" y1="21" x2="9" y2="9" />
+                        </svg>
+                    </div>
+                    <h3 class="wc-title">Zyphron Free Dash</h3>
+                    <p class="wc-desc">Full-stack e-commerce dashboard — user management, server allocation, API key
+                        handling, and ticket system.</p>
+                    <div class="wc-tags">
+                        <span>Vue.js</span>
+                        <span>NestJS</span>
+                        <span>TypeScript</span>
+                    </div>
+                    <a href="https://github.com/SirYadav1/zyphron-free-dash" target="_blank" class="wc-link">
+                        View Project
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7" />
+                            <polyline points="7 7 17 7 17 17" />
+                        </svg>
+                    </a>
+                </article>
+
+                <article class="work-card">
+                    <div class="wc-icon small">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                        </svg>
+                    </div>
+                    <h3 class="wc-title">TG Chat Fetch</h3>
+                    <p class="wc-desc">Telegram chat archiver — multi-target backup, date filtering, auto-resume on
+                        interrupt.</p>
+                    <div class="wc-tags">
+                        <span>Python</span>
+                        <span>Telethon</span>
+                    </div>
+                    <a href="https://github.com/SirYadav1/tg-chat-fetch" target="_blank" class="wc-link">
+                        View
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7" />
+                            <polyline points="7 7 17 7 17 17" />
+                        </svg>
+                    </a>
+                </article>
+
+                <article class="work-card">
+                    <div class="wc-icon small">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3 class="wc-title">AdwanceSNI</h3>
+                    <p class="wc-desc">SNI finding tool for network reconnaissance and security testing.</p>
+                    <div class="wc-tags">
+                        <span>Python</span>
+                        <span>Security</span>
+                        <span class="tag-star">★ 10</span>
+                    </div>
+                    <a href="https://github.com/SirYadav1/AdwanceSNI" target="_blank" class="wc-link">
+                        View
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7" />
+                            <polyline points="7 7 17 7 17 17" />
+                        </svg>
+                    </a>
+                </article>
+
+                <article class="work-card">
+                    <div class="wc-icon small">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg>
+                    </div>
+                    <h3 class="wc-title">FlashScan Go</h3>
+                    <p class="wc-desc">High-performance security scanner written in Go.</p>
+                    <div class="wc-tags">
+                        <span>Go</span>
+                        <span>Security</span>
+                    </div>
+                    <a href="https://github.com/SirYadav1/flashscan-go" target="_blank" class="wc-link">
+                        View
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7" />
+                            <polyline points="7 7 17 7 17 17" />
+                        </svg>
+                    </a>
+                </article>
+
+                <article class="work-card">
+                    <div class="wc-icon small">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </div>
+                    <h3 class="wc-title">Insta Downloader</h3>
+                    <p class="wc-desc">Telegram bot that downloads Instagram videos.</p>
+                    <div class="wc-tags">
+                        <span>Python</span>
+                        <span>Telegram Bot</span>
+                        <span class="tag-star">★ 3</span>
+                    </div>
+                    <a href="https://github.com/SirYadav1/insta-downloader" target="_blank" class="wc-link">
+                        View
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="7" y1="17" x2="17" y2="7" />
+                            <polyline points="7 7 17 7 17 17" />
+                        </svg>
+                    </a>
+                </article>
+
+            </div>
+            <div class="work-footer">
+                <a href="https://github.com/SirYadav1?tab=repositories" target="_blank" class="btn btn-secondary">
+                    View All Repositories
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">03</span>
+                <h2 class="section-title">Tech Stack</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3>Languages</h3>
+                    <ul>
+                        <li>PHP</li>
+                        <li>Node.js / JavaScript</li>
+                        <li>Python</li>
+                        <li>TypeScript</li>
+                        <li>Go</li>
+                        <li>Bash</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                    </div>
+                    <h3>Frameworks</h3>
+                    <ul>
+                        <li>Express.js</li>
+                        <li>Vue.js</li>
+                        <li>NestJS</li>
+                        <li>React</li>
+                        <li>Flutter</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+                            <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+                            <line x1="6" y1="6" x2="6.01" y2="6" />
+                            <line x1="6" y1="18" x2="6.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Infrastructure</h3>
+                    <ul>
+                        <li>Linux (Ubuntu, Alpine)</li>
+                        <li>Docker</li>
+                        <li>Nginx</li>
+                        <li>MySQL / SQLite</li>
+                        <li>Cloudflare</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                        </svg>
+                    </div>
+                    <h3>Security</h3>
+                    <ul>
+                        <li>Network Scanning</li>
+                        <li>Subdomain Discovery</li>
+                        <li>SNI Detection</li>
+                        <li>Bug Bounty Hunting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TERMINAL -->
+    <section id="terminal" class="terminal-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">04</span>
+                <h2 class="section-title">Interactive Terminal</h2>
+            </div>
+            <p class="terminal-hint">Type <code>help</code> and press enter to explore</p>
+            <div class="terminal" id="terminal">
+                <div class="term-bar">
+                    <div class="term-dots">
+                        <span></span><span></span><span></span>
+                    </div>
+                    <span class="term-title">visitor@portfolio:~</span>
+                </div>
+                <div class="term-body" id="termBody">
+                    <div class="term-line"><span class="t-green">Welcome to Sundram's terminal.</span></div>
+                    <div class="term-line"><span class="t-dim">Type 'help' to see available commands.</span></div>
+                </div>
+                <div class="term-input-line">
+                    <span class="term-prompt">visitor@portfolio:~$</span>
+                    <input type="text" id="termInput" class="term-input" spellcheck="false" autocomplete="off"
+                        placeholder="type a command...">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">05</span>
+                <h2 class="section-title">Get In Touch</h2>
+            </div>
+            <p class="contact-desc">Interested in working together? Feel free to reach out.</p>
+            <div class="contact-grid">
+                <a href="https://github.com/SirYadav1" target="_blank" class="contact-card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                    </svg>
+                    <div class="contact-info">
+                        <span class="contact-name">GitHub</span>
+                        <span class="contact-handle">@SirYadav1</span>
+                    </div>
+                    <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                </a>
+                <a href="https://t.me/SirYadav" target="_blank" class="contact-card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.492-1.302.48-.428-.013-1.252-.242-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z" />
+                    </svg>
+                    <div class="contact-info">
+                        <span class="contact-name">Telegram</span>
+                        <span class="contact-handle">@SirYadav</span>
+                    </div>
+                    <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                </a>
+                <a href="mailto:osamabinladenfromindia@gmail.com" class="contact-card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.5">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    <div class="contact-info">
+                        <span class="contact-name">Email</span>
+                        <span class="contact-handle">osamabinladenfromindia@gmail.com</span>
+                    </div>
+                    <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                </a>
+                <a href="https://leetcode.com/u/siryadav1" target="_blank" class="contact-card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M13.483 0a1.374 1.374 0 0 0-.961.438L7.116 6.226l-3.854 4.126a5.266 5.266 0 0 0-1.209 2.104 5.35 5.35 0 0 0-.125.513 5.527 5.527 0 0 0 .062 2.362 5.83 5.83 0 0 0 .349 1.017 5.938 5.938 0 0 0 1.271 1.818l4.277 4.193.039.038c2.248 2.165 5.852 2.133 8.063-.074l2.624-2.61.963-.965a1.373 1.373 0 0 0-.252-1.958l-.016-.013a1.373 1.373 0 0 0-1.954.232l-.964.964-2.623 2.611c-1.137 1.131-2.887 1.175-4.01.05l-4.278-4.193a3.285 3.285 0 0 1-.688-.984 3.373 3.373 0 0 1-.173-.578 3.21 3.21 0 0 1-.033-1.332 3.35 3.35 0 0 1 .69-1.274l3.85-4.126 5.41-5.619a1.374 1.374 0 0 0 .042-1.943 1.374 1.374 0 0 0-.96-.438zm-.066 5.478a1.374 1.374 0 0 0-.965.434L7.014 11.85a1.374 1.374 0 0 0 .074 1.942c.54.5 1.378.177 1.942-.074l5.414-2.938a1.374 1.374 0 0 0 .586-1.843 1.374 1.374 0 0 0-1.213-.774z" />
+                    </svg>
+                    <div class="contact-info">
+                        <span class="contact-name">LeetCode</span>
+                        <span class="contact-handle">@SirYadav1</span>
+                    </div>
+                    <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                </a>
+                <a href="https://x.com/siryadav0" target="_blank" class="contact-card">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                    </svg>
+                    <div class="contact-info">
+                        <span class="contact-name">X / Twitter</span>
+                        <span class="contact-handle">@siryadav0</span>
+                    </div>
+                    <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2">
+                        <line x1="7" y1="17" x2="17" y2="7" />
+                        <polyline points="7 7 17 7 17 17" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>crafted on linux — no ai templates harmed</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
