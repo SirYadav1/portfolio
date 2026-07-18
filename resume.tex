@@ -1,0 +1,179 @@
+% ============================================
+%  Sundram Yadav — Resume
+%  Compile: xelatex resume.tex
+% ============================================
+\documentclass[10pt,a4paper]{article}
+
+% --- Packages ---
+\usepackage[margin=0.6in]{geometry}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+% --- Colors ---
+\definecolor{accent}{HTML}{2563EB}
+\definecolor{dark}{HTML}{1E293B}
+\definecolor{muted}{HTML}{64748B}
+\definecolor{border}{HTML}{E2E8F0}
+
+% --- Fonts ---
+\setmainfont{Inter}[
+  Scale=0.95,
+  Extension=.ttf,
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  ItalicFont=*-Italic
+]
+\setmonofont{JetBrainsMono}[
+  Scale=0.85,
+  Extension=.ttf,
+  UprightFont=*-Regular,
+  BoldFont=*-Bold
+]
+
+% --- Section formatting ---
+\titleformat{\section}
+  {\Large\bfseries\color{dark}}{}{0em}{}[\vspace{-0.3em}\rule{\textwidth}{0.5pt}]
+\titlespacing*{\section}{0pt}{1em}{0.5em}
+
+\titleformat{\subsection}
+  {\bfseries\color{dark}}{}{0em}{}
+\titlespacing*{\subsection}{0pt}{0.5em}{0.2em}
+
+% --- Custom commands ---
+\newcommand{\tag}[1]{%
+  \tikz[baseline=(t.base)]\node[draw=border,fill=gray!5,rounded corners=2pt,inner sep=3pt,font=\small] (t) {#1};%
+}
+
+\newcommand{\project}[3]{%
+  \noindent\textbf{#1} \hfill \textcolor{muted}{\small #2}\par
+  \small #3\par
+  \vspace{0.4em}
+}
+
+\newcommand{\edu}[4]{%
+  \noindent\textbf{#1} \hfill \textcolor{muted}{\small #2}\par
+  \small\textcolor{muted}{#3}\par
+  \small\textcolor{muted}{#4}\par
+  \vspace{0.4em}
+}
+
+% ============================================
+\begin{document}
+
+% --- Header ---
+\begin{minipage}{0.78\textwidth}
+  {\HUGE\bfseries\color{dark} Sundram Yadav}\\[0.15em]
+  {\large\color{accent} Backend Developer \& Security Researcher}\\[0.5em]
+  \small
+  \faEnvelope\ \href{mailto:osamabinladenfromindia@gmail.com}{osamabinladenfromindia@gmail.com} \quad
+  \faGithub\ \href{https://github.com/SirYadav1}{SirYadav1} \quad
+  \faTelegram\ \href{https://t.me/SirYadav}{SirYadav} \\[0.1em]
+  \faMapMarker\ Uttar Pradesh, India \quad
+  \faGlobe\ \href{https://github.com/SirYadav1}{github.com/SirYadav1}
+\end{minipage}%
+\begin{minipage}{0.2\textwidth}
+  \raggedleft
+  % -- Add your photo here --
+  % \includegraphics[width=0.9\textwidth,rounded corners=4pt]{photo.jpg}
+  \textcolor{muted}{\small[Photo]} % remove this line after adding photo
+\end{minipage}
+
+\vspace{0.8em}
+
+% --- Summary ---
+\section{Summary}
+Backend developer building practical tools — network scanners, Telegram bots, automation scripts. Passionate about security research and ethical hacking. Linux enthusiast. Focused on simple, working solutions over unnecessary complexity.
+
+% --- Skills ---
+\section{Skills}
+\small
+\noindent
+\textbf{Languages:} \tag{PHP} \tag{Node.js} \tag{Python} \tag{TypeScript} \tag{Go} \tag{Bash} \\[0.3em]
+\textbf{Frameworks:} \tag{Express.js} \tag{Vue.js} \tag{NestJS} \tag{React} \tag{Flutter} \\[0.3em]
+\textbf{Infrastructure:} \tag{Linux} \tag{Docker} \tag{Nginx} \tag{MySQL} \tag{SQLite} \tag{Cloudflare} \\[0.3em]
+\textbf{Security:} \tag{Network Scanning} \tag{Bug Bounty} \tag{SNI Detection} \tag{Subdomain Discovery}
+
+% --- Experience / Projects ---
+\section{Projects}
+
+\project{Zyphron Free Dash}{NestJS + Vue 3}{%
+  Full-stack game server hosting platform with credits-based economy.
+  130+ API endpoints, 20+ DB entities, Pterodactyl integration, RBAC, 2FA, email automation.
+  \hfill \href{https://github.com/SirYadav1/zyphron-free-dash}{\small\faGithub}
+}
+
+\project{AdwanceSNI 2.0}{Python}{%
+  Network scanning suite — subdomain discovery, host scanning, IP extraction, IP generation.
+  All-in-one security reconnaissance tool. 22 stars.
+  \hfill \href{https://github.com/SirYadav1/AdwanceSNI-2.0}{\small\faGithub}
+}
+
+\project{IGNOU Grade Card Bot}{Python + BeautifulSoup}{%
+  Telegram bot scraping IGNOU portals for assignment status and grade cards.
+  Supports CBCS and non-CBCS programs. Real-time data, no database required.
+  \hfill \href{https://github.com/SirYadav1/ignou-gradecard-bot}{\small\faGithub}
+}
+
+\project{TG Chat Fetch}{Python + Telethon}{%
+  Multi-target Telegram chat archiver with date filtering, auto-resume on interrupt, media backup.
+  \hfill \href{https://github.com/SirYadav1/tg-chat-fetch}{\small\faGithub}
+}
+
+\project{FlashScan Go}{Go}{%
+  High-performance security scanner optimized for speed. Parallel scanning, custom port ranges.
+  \hfill \href{https://github.com/SirYadav1/flashscan-go}{\small\faGithub}
+}
+
+\project{AirBeats}{Electron + JavaScript}{%
+  Desktop music player built with Electron. Cross-platform, custom UI, local playback.
+  \hfill \href{https://github.com/SirYadav1/AirBeats}{\small\faGithub}
+}
+
+\project{XHS Business Idea Validator}{Python}{%
+  Analyzes Xiaohongshu data to identify market opportunities and generate automated validation reports.
+  \hfill \href{https://github.com/SirYadav1/XHS_Business_Idea_Validator}{\small\faGithub}
+}
+
+% --- Work Experience ---
+\section{Experience}
+
+\noindent\textbf{Security Researcher (Bug Bounty)} \hfill \textcolor{muted}{\small 2024 -- Present}\par
+\small Bug bounty hunting across various platforms. Identified and reported vulnerabilities in web applications and APIs.
+
+\vspace{0.3em}
+\noindent\textbf{Open Source Contributor} \hfill \textcolor{muted}{\small 2023 -- Present}\par
+\small 20+ public repositories. Building tools for network security, Telegram automation, and web development.
+
+% --- Education ---
+\section{Education}
+
+\edu{BCA (Bachelor of Computer Applications)}{2024 -- Present}{3rd Semester}{SPU University, Himachal Pradesh}
+
+\edu{12th (Arts)}{2023}{Government Senior Secondary Boy School}{Himachal Pradesh}
+
+% --- Certifications / Achievements ---
+\section{Certifications \& Achievements}
+\small
+\begin{itemize}[left=0pt,label={},nosep]
+  \item \textbf{Bug Bounty} — Discovered and reported security vulnerabilities in production applications.
+  \item \textbf{Open Source} — 20+ repositories, 36+ cumulative stars across projects.
+  \item \textbf{Hackathons} — Built and shipped functional tools under time constraints.
+\end{itemize}
+
+% --- Languages ---
+\section{Languages}
+\small
+\noindent
+\tag{Hindi} \tag{English} \tag{Bhojpuri}
+
+\vspace{1em}
+\centering\small\textcolor{muted}{\faGithub\ \href{https://github.com/SirYadav1}{github.com/SirYadav1} \qquad \faGlobe\ Portfolio: \href{https://github.com/SirYadav1/portfolio}{SirYadav1/portfolio}}
+
+\end{document}
