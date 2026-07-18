@@ -3,212 +3,152 @@
 % Compile: pdflatex resume.tex
 %------------------------
 
-\documentclass[letterpaper,11pt]{article}
+\documentclass[letterpaper,10pt]{article}
 
 \usepackage{fontawesome5}
-\usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
-\usepackage{verbatim}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
 \usepackage{fancyhdr}
-\usepackage[english]{babel}
-\usepackage{tabularx}
 \usepackage{multicol}
+\usepackage{multirow}
 \input{glyphtounicode}
 
 \usepackage[default]{lato}
 
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
 
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\oddsidemargin}{-0.4in}
+\addtolength{\evensidemargin}{-0.4in}
+\addtolength{\textwidth}{0.8in}
+\addtolength{\topmargin}{-0.4in}
+\addtolength{\textheight}{0.8in}
 
 \urlstyle{same}
-\raggedbottom
-\raggedright
-\setlength{\tabcolsep}{0in}
 
-\titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+\titleformat{\section}
+  {\vspace{4pt}\scshape\raggedright\small\bfseries}{}{0em}{}[\vspace{-2pt}\color{black}\rule{\columnwidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{6pt}{3pt}
+
+\newcommand{\project}[2]{
+  \noindent\textbf{#1}\hfill\footnotesize#2\par
+}
+
+\newcommand{\skill}[2]{\noindent\textbf{#1:} #2\par}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\setlist{leftmargin=8pt, nosep, before={\vspace{2pt}}}
 
 \pdfgentounicode=1
-
-\newcommand{\resumeItem}[1]{
-  \item\small{{#1 \vspace{-2pt}}}
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & #2 \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 \begin{document}
 
 %----------HEADING----------%
 \begin{center}
-  {\Huge \scshape Sundram Yadav} \\[0.3em]
-  \small
+  {\LARGE\bfseries Sundram Yadav}\\[2pt]
+  {\footnotesize
   \faPhone\ +91-9015276758 \quad
   \faEnvelope\ \href{mailto:osamabinladenfromindia@gmail.com}{osamabinladenfromindia@gmail.com} \quad
   \faGithub\ \href{https://github.com/SirYadav1}{SirYadav1}
+  }
 \end{center}
 
-%-----------EXPERIENCE-----------%
-\section{Experience}
-\resumeSubHeadingListStart
-
-  \resumeSubheading
-    {Security Researcher (Bug Bounty)}{2024 -- Present}
-    {Various Platforms}{Remote}
-    \resumeItemListStart
-      \resumeItem{Identified and disclosed security vulnerabilities across web applications through responsible disclosure programs}
-      \resumeItem{Conducted reconnaissance and penetration testing using custom automation scripts and industry-standard tools}
-      \resumeItem{Collaborated with development teams on patch verification and security advisory documentation}
-    \resumeItemListEnd
-    \small\textbf{Tech Stack:} Python, Bash, Burp Suite, Nmap, Linux
-
-  \resumeSubheading
-    {Open Source Developer}{2023 -- Present}
-    {Self-Initiated Projects}{Remote}
-    \resumeItemListStart
-      \resumeItem{Built and maintained 20+ open-source repositories with 510+ total commits and 40+ cumulative stars}
-      \resumeItem{Developed network reconnaissance tools (AdwanceSNI series) adopted by the security community with 24 stars and 9 forks}
-      \resumeItem{Created Telegram bots and automation scripts handling real-time data fetching and processing workflows}
-    \resumeItemListEnd
-    \small\textbf{Tech Stack:} Python, Go, Node.js, PHP, Kotlin, Docker, Git
-
-\resumeSubHeadingListEnd
-
-%-----------PROJECTS-----------%
-\section{Projects}
-\resumeSubHeadingListStart
-
-  \resumeProjectHeading
-    {\textbf{AdwanceSNI 2.0} $|$ \emph{Python, Socket Programming, Multithreading, Shell}}{\href{https://github.com/SirYadav1/AdwanceSNI-2.0}{\small\faGithub}}
-    \resumeItemListStart
-      \resumeItem{Built multithreaded network reconnaissance suite for subdomain discovery, host scanning, and IP extraction -- 75 commits, 24 stars}
-      \resumeItem{Reduced scan time by 60\% using concurrent workers and optimized socket connections with custom thread pooling}
-      \resumeItem{Implemented subfinder binary integration, escaped quote handling, and pip install packaging for production deployment}
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\textbf{AirBeats} $|$ \emph{Kotlin, Android SDK, Google Sign-In, Media Player APIs}}{\href{https://github.com/SirYadav1/AirBeats}{\small\faGithub}}
-    \resumeItemListStart
-      \resumeItem{Developed Android music player app with 100+ commits featuring concert-themed UI, onboarding flow, and Google Sign-In integration}
-      \resumeItem{Implemented CredentialManager with fallback to legacy GoogleSignInClient, resolving SHA-1 missing crash scenarios}
-      \resumeItem{Built custom media playback system with background blur effects, auth button styling, and error toast notifications}
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\textbf{Zyphron Free Dash} $|$ \emph{Vue.js, NestJS, TypeORM, SQLite, Pterodactyl}}{\href{https://github.com/SirYadav1/zyphron-free-dash}{\small\faGithub}}
-    \resumeItemListStart
-      \resumeItem{Architected full-stack game server hosting platform with credits-based economy and Pterodactyl panel integration}
-      \resumeItem{Implemented 130+ REST API endpoints across 20+ database entities with RBAC, 2FA, and email automation}
-      \resumeItem{Built admin dashboard with user management, SMTP configuration, and server deployment workflows}
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\textbf{VTEX Files Manager} $|$ \emph{Go, REST API, CLI, Shell}}{\href{https://github.com/SirYadav1/vtex-files-manager}{\small\faGithub}}
-    \resumeItemListStart
-      \resumeItem{Created CLI tool for VTEX e-commerce file management with cross-filesystem binary move and self-update capabilities}
-      \resumeItem{Integrated GraphQL API client with file existence checks and typed error handling for upload workflows}
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\textbf{API Rate Limiter Dashboard} $|$ \emph{Node.js, Express, SQLite, WebSocket}}{\href{https://github.com/SirYadav1/api-rate-limiter}{\small\faGithub}}
-    \resumeItemListStart
-      \resumeItem{Built real-time API monitoring dashboard with Express backend, SQLite storage, and WebSocket live updates}
-      \resumeItem{Implemented burst simulation mode, XSS input sanitization, and Docker containerized deployment}
-    \resumeItemListEnd
-
-  \resumeProjectHeading
-    {\textbf{FlashScan Go} $|$ \emph{Go, Concurrent Programming}}{\href{https://github.com/SirYadav1/flashscan-go}{\small\faGithub}}
-    \resumeItemListStart
-      \resumeItem{Developed high-performance security scanner in Go with parallel scanning and custom port range configuration}
-    \resumeItemListEnd
-
-\resumeSubHeadingListEnd
-
-%-----------EDUCATION-----------%
-\section{Education}
-\resumeSubHeadingListStart
-  \resumeSubheading
-    {BCA (Bachelor of Computer Applications)}{2024 -- Present}
-    {SPU University}{Himachal Pradesh}
-  \resumeSubheading
-    {12th (Arts) -- 75.6\%}{2023}
-    {Government Senior Secondary Boy School}{Himachal Pradesh}
-\resumeSubHeadingListEnd
-
-%-----------TECHNICAL SKILLS-----------%
-\section{Technical Skills}
+%----------TWO COLUMN LAYOUT----------%
 \begin{multicols}{2}
-\resumeSubHeadingListStart
-  \item{
-    \textbf{Programming Languages:} Python, PHP, Go, JavaScript, TypeScript, Kotlin, Bash
-  }
-  \item{
-    \textbf{Backend:} Node.js, Express.js, NestJS, REST APIs, GraphQL
-  }
-  \item{
-    \textbf{Frontend:} Vue.js, React
-  }
-  \item{
-    \textbf{Databases:} MySQL, SQLite, TypeORM
-  }
-  \item{
-    \textbf{Tools \& Infra:} Linux, Docker, Nginx, Git, WebSocket
-  }
-  \item{
-    \textbf{Security:} Network Scanning, Burp Suite, Nmap, Bug Bounty
-  }
-  \item{
-    \textbf{CS Fundamentals:} Data Structures, Operating Systems, Computer Networks
-  }
-  \item{
-    \textbf{Misc:} Multithreading, Web Scraping, CLI Development, System Design
-  }
-\resumeSubHeadingListEnd
-\end{multicols}
 
-%-----------ACHIEVEMENTS-----------%
+%-----------LEFT COLUMN-----------%
+
+\section{Summary}
+Backend developer building tools for security, automation, and web. 510+ commits across 15+ projects. Linux enthusiast.
+
+\section{Skills}
+\skill{Languages}{Python, PHP, Go, JavaScript, TypeScript, Kotlin, Bash}
+\skill{Backend}{Node.js, Express, NestJS, REST, GraphQL}
+\skill{Frontend}{Vue.js, React}
+\skill{DB}{MySQL, SQLite, TypeORM}
+\skill{Infra}{Linux, Docker, Nginx, Git, WebSocket}
+\skill{Security}{Network Scanning, Burp Suite, Nmap, Bug Bounty}
+\skill{CS}{DSA, OS, Networks, Multithreading, System Design}
+
+\section{Experience}
+
+\noindent\textbf{Code Audit \& Refactoring}\hfill\footnotesize 2026\par
+\footnotesize Audited and cleaned full-stack repos (Zyphron Dash, IGNOU Bot) -- scrubbed git history, removed secrets, added LICENSE, restructured code, prepared for public release.
+
+\vspace{3pt}
+\noindent\textbf{Open Source Developer}\hfill\footnotesize 2023--Present\par
+\footnotesize Built 15+ projects from scratch. Focused on security tools, Telegram bots, and web apps.
+
+\vspace{3pt}
+\noindent\textbf{Security Researcher}\hfill\footnotesize 2024--Present\par
+\footnotesize Bug bounty hunting. Vulnerability discovery and responsible disclosure.
+
+\section{Education}
+\noindent\textbf{BCA}\hfill\footnotesize 2024--Present\par
+\footnotesize SPU University, Himachal -- 3rd Sem\par
+\vspace{3pt}
+\noindent\textbf{12th (Arts) -- 75.6\%}\hfill\footnotesize 2023\par
+\footnotesize Govt. Sr. Sec. Boy School, Himachal
+
+%-----------RIGHT COLUMN-----------%
+\columnbreak
+
+\section{Projects}
+
+\project{AdwanceSNI 2.0}{Python}
+\footnotesize Multithreaded network recon suite -- subdomain discovery, host scanning, IP tools. 75 commits, 24 stars, 9 forks.
+\vspace{4pt}
+
+\project{Zyphron Free Dash}{Vue + NestJS}
+\footnotesize Full-stack hosting platform with credit economy, Pterodactyl integration, 130+ API endpoints.
+\vspace{4pt}
+
+\project{AdwanceSNI}{Python}
+\footnotesize SNI finding tool. 35 commits, 11 stars, 3 forks.
+\vspace{4pt}
+
+\project{IGNOU Grade Card Bot}{Python}
+\footnotesize Telegram bot scraping IGNOU portals for assignment status and grade card data.
+\vspace{4pt}
+
+\project{FlashScan Go}{Go}
+\footnotesize High-performance security scanner with parallel scanning.
+\vspace{4pt}
+
+\project{API Rate Limiter}{Node.js}
+\footnotesize Real-time API monitoring dashboard with WebSocket, SQLite, Docker.
+\vspace{4pt}
+
+\project{TG Chat Fetch}{Python}
+\footnotesize Telegram chat archiver with multi-target backup and auto-resume.
+\vspace{4pt}
+
+\project{Insta Downloader}{PHP}
+\footnotesize Telegram bot for Instagram video downloads. 3 stars, 1 fork.
+\vspace{4pt}
+
+\project{Domain Splitter}{Shell}
+\footnotesize Splits large domain lists into manageable files. 3 stars.
+\vspace{4pt}
+
+\project{youtube-discord-rpc}{Python}
+\footnotesize Browser ext + Python server syncing YouTube to Discord rich presence.
+
+\section{Contributions}
+\project{AirBeats}{Kotlin}
+\footnotesize Android music player. Contributed Google Sign-In, onboarding flow, crash fixes. 100+ commits.
+
 \section{Achievements}
-\resumeSubHeadingListStart
-  \resumeItem{510+ total commits across 20+ open-source repositories with 40+ cumulative stars on GitHub}
-  \resumeItem{AdwanceSNI 2.0 -- 24 stars, 9 forks, widely used network reconnaissance tool in security community}
-  \resumeItem{Discovered and responsibly disclosed security vulnerabilities through bug bounty programs}
-  \resumeItem{Built production-ready Android app (AirBeats) with 100+ commits, Google Sign-In, and custom media player}
-\resumeSubHeadingListEnd
+\footnotesize
+\begin{itemize}
+  \item 510+ commits, 40+ stars across 15+ repos
+  \item AdwanceSNI 2.0: 24 stars, 9 forks
+  \item Bug bounty -- responsible disclosures
+\end{itemize}
+
+\end{multicols}
 
 \end{document}
