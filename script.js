@@ -223,7 +223,7 @@ Linux, bug bounty, and keeping things simple.`,
 <span class="t-cyan"> / /\\ \\_____/ /\\ \\</span>      <span class="t-purple">Motto:</span> build. break. secure.
 <span class="t-cyan"> \\_\\/         \\/_/</span>
 
-<span class="t-dim">  built from scratch, no templates</span>`,
+<span class="t-dim">  status: still learning, still building</span>`,
 
     hack: () => [
         '<span class="t-red">⚠️ intrusion attempt detected</span>',
