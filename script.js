@@ -347,3 +347,40 @@ terminalObserver.observe(document.querySelector('.terminal'));
     }, { threshold: 0.5 });
     nums.forEach((n) => obs.observe(n));
 })();
+
+/* === PARTICLES (sv-particles inspired, vanilla) === */
+(function initParticles() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+    const count = 35;
+    for (let i = 0; i < count; i++) {
+        const p = document.createElement('span');
+        p.className = 'particle';
+        const size = Math.random() * 3 + 1;
+        p.style.width = size + 'px';
+        p.style.height = size + 'px';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.top = Math.random() * 100 + '%';
+        p.style.setProperty('--p-dur', (Math.random() * 6 + 6).toFixed(1) + 's');
+        p.style.setProperty('--p-delay', (Math.random() * 4).toFixed(1) + 's');
+        container.appendChild(p);
+    }
+})();
+
+/* === SCROLL REVEAL (sv-animations fade-in style) === */
+(function initReveal() {
+    const targets = document.querySelectorAll(
+        '.section-header, .about-text, .about-card, .currently-section, .work-card, .skill-card, .contact-card, .curr-item, .terminal, .hero-stats'
+    );
+    if (!targets.length) return;
+    targets.forEach((t) => t.classList.add('reveal'));
+    const obs = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+            if (e.isIntersecting) {
+                e.target.classList.add('is-visible');
+                obs.unobserve(e.target);
+            }
+        });
+    }, { threshold: 0.15 });
+    targets.forEach((t) => obs.observe(t));
+})();
