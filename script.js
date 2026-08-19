@@ -318,13 +318,14 @@ terminalObserver.observe(document.querySelector('.terminal'));
     }
 })();
 
-/* === NUMBER TICKER (count-up animation) === */
+/* === NUMBER TICKER + LIVE GITHUB DATA === */
 (function initNumberTicker() {
+    const USERNAME = 'SirYadav1';
     const nums = document.querySelectorAll('.stat-num[data-count]');
     if (!nums.length) return;
+
     const easeOut = (t) => 1 - Math.pow(1 - t, 3);
-    const animate = (el) => {
-        const target = parseFloat(el.getAttribute('data-count')) || 0;
+    const animate = (el, target) => {
         const suffix = el.textContent.replace(/[0-9]/g, '').trim();
         const duration = 2000;
         const start = performance.now();
@@ -337,15 +338,58 @@ terminalObserver.observe(document.querySelector('.terminal'));
         };
         requestAnimationFrame(step);
     };
+
+    // Fetch real GitHub stats, then animate each counter with live values
+    async function loadGitHubStats() {
+        try {
+            const [userRes, reposRes] = await Promise.all([
+                fetch(`https://api.github.com/users/${USERNAME}`),
+                fetch(`https://api.github.com/users/${USERNAME}/repos?per_page=100`)
+            ]);
+            if (!userRes.ok || !reposRes.ok) return;
+            const user = await userRes.json();
+            const repos = await reposRes.json();
+            if (!Array.isArray(repos)) return;
+
+            const stars = repos.reduce((s, r) => s + (r.stargazers_count || 0), 0);
+            const langs = new Set(repos.map(r => r.language).filter(Boolean));
+
+            const values = {
+                repos: user.public_repos ?? repos.length,
+                stars: stars,
+                followers: user.followers ?? 0,
+                languages: langs.size
+            };
+
+            nums.forEach((el) => {
+                const key = el.getAttribute('data-api');
+                const live = values[key];
+                if (typeof live === 'number') {
+                    el.setAttribute('data-count', live);
+                    animate(el, live);
+                }
+            });
+        } catch (e) {
+            // Keep fallback hardcoded values if API fails/rate-limited
+            nums.forEach((el) => animate(el, parseFloat(el.getAttribute('data-count')) || 0));
+        }
+    }
+
+    // Animate with fallback values immediately (in view), then refresh with live data
     const obs = new IntersectionObserver((entries) => {
         entries.forEach((e) => {
             if (e.isIntersecting) {
-                animate(e.target);
-                obs.unobserve(e.target);
+                const el = e.target;
+                const fallback = parseFloat(el.getAttribute('data-count')) || 0;
+                animate(el, fallback);
+                obs.unobserve(el);
             }
         });
     }, { threshold: 0.5 });
     nums.forEach((n) => obs.observe(n));
+
+    // Fetch live data (does not depend on scroll)
+    loadGitHubStats();
 })();
 
 /* === PARTICLES (sv-particles inspired, vanilla) === */
