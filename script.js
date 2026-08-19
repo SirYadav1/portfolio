@@ -369,6 +369,50 @@ terminalObserver.observe(document.querySelector('.terminal'));
                     animate(el, live);
                 }
             });
+
+            // Update hero contributions counter (from free contributions API)
+            try {
+                const cRes = await fetch(`https://github-contributions-api.jogruber.de/v4/${USERNAME}?y=last`);
+                if (cRes.ok) {
+                    const cData = await cRes.json();
+                    const total = cData?.total?.contributions ?? null;
+                    if (typeof total === 'number') {
+                        const cEl = document.querySelector('.stat-num[data-api="contributions"]');
+                        if (cEl) {
+                            cEl.setAttribute('data-count', total);
+                            animate(cEl, total);
+                        }
+                    }
+                }
+            } catch (_) { /* keep fallback */ }
+
+            // Update each work card with its real star count (skip 0-star repos)
+            const byName = {};
+            repos.forEach(r => { byName[r.name.toLowerCase()] = r.stargazers_count || 0; });
+            document.querySelectorAll('.work-card').forEach((card) => {
+                const link = card.querySelector('a.wc-link');
+                const href = link ? link.getAttribute('href') || '' : '';
+                const match = href.match(/github\.com\/[^/]+\/([^/?#]+)/i);
+                if (!match) return;
+                const repoName = decodeURIComponent(match[1]).toLowerCase();
+                const starCount = byName[repoName];
+                if (typeof starCount !== 'number') return;
+                let tag = card.querySelector('.tag-star');
+                if (starCount === 0) {
+                    // Hide the star tag entirely for 0-star repos
+                    if (tag) tag.remove();
+                    return;
+                }
+                if (tag) {
+                    tag.textContent = `★ ${starCount}`;
+                } else {
+                    tag = document.createElement('span');
+                    tag.className = 'tag-star';
+                    tag.textContent = `★ ${starCount}`;
+                    const tags = card.querySelector('.wc-tags');
+                    if (tags) tags.appendChild(tag);
+                }
+            });
         } catch (e) {
             // Keep fallback hardcoded values if API fails/rate-limited
             nums.forEach((el) => animate(el, parseFloat(el.getAttribute('data-count')) || 0));
